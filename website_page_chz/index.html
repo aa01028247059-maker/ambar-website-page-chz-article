@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO (на сайте заполняется в Yoast) -->
+  <title>Сканирование «Честного ЗНАКа» при отгрузке | АМБАР</title>
+  <meta name="description" content="Сканируем коды Data Matrix при выдаче груза со склада, связываем их с заказом и ГРМ, формируем реестр и передаем поклажедателю. Москва, Троицк.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Фиксация кодов «Честный ЗНАК» при отгрузке груза">
+  <meta property="og:description" content="Сканируем коды Data Matrix при выдаче груза со склада, связываем их с заказом и ГРМ, формируем реестр и передаем поклажедателю. Москва, Троицк.">
+  <meta property="og:url" content="https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/">
+  <meta property="og:site_name" content="Склад хранения вещей Амбар">
+  <!-- TODO: заменить на абсолютный URL assets/images/photo-hero.jpg после загрузки на сайт -->
+
+  <meta property="og:image" content="https://ambar-sklad.ru/wp-content/uploads/2026/06/ambar-sklad-vremennoe-hranenie-veshchey-moskva.png?v=1782225296">
+  <meta property="article:modified_time" content="2026-10-26T00:00:00+03:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Фиксация кодов «Честный ЗНАК» при отгрузке груза">
+  <meta name="twitter:description" content="Сканируем коды Data Matrix при выдаче груза со склада, связываем их с заказом и ГРМ, формируем реестр и передаем поклажедателю. Москва, Троицк.">
+
+  <!-- Только для прототипа: шрифт с сайта не загружается локально из-за CORS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Только для прототипа: Fancybox с сайта (на сайте подключается темой на всех страницах) -->
+  <link rel="stylesheet" href="https://ambar-sklad.ru/wp-content/themes/devseopro.com/assets/css/fancybox.css?ver=7.1.3">
+
+  <!-- Только для прототипа: копия CSS шаблона страниц услуг -->
+  <link rel="stylesheet" href="css/site/single_service.css">
+  <!-- Переносится на сайт -->
+  <link rel="stylesheet" href="css/chz-service.css">
+  <!-- Только для прототипа -->
+  <link rel="stylesheet" href="css/prototype.css">
+
+  <!-- Структурированные данные (ТЗ, раздел 8). FAQ совпадает с видимым текстом -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#webpage",
+        "url": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/",
+        "name": "Фиксация кодов «Честный ЗНАК» при отгрузке груза",
+        "description": "Сканирование кодов Data Matrix при выдаче груза со склада, привязка к заказу и ГРМ, формирование реестра для поклажедателя.",
+        "inLanguage": "ru-RU",
+        "dateModified": "2026-10-26",
+        "isPartOf": {
+          "@id": "https://ambar-sklad.ru/#website"
+        },
+        "about": {
+          "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#service"
+        },
+        "breadcrumb": {
+          "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#breadcrumb"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#service",
+        "name": "Фиксация кодов «Честный ЗНАК» при отгрузке груза",
+        "serviceType": "Сканирование и фиксация кодов Data Matrix при отгрузке со склада",
+        "description": "Склад сканирует доступные коды Data Matrix при выдаче груза, связывает их с заказом и номерами ГРМ и передает поклажедателю реестр считанных кодов.",
+        "provider": {
+          "@id": "https://ambar-sklad.ru/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Москва"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Московская область"
+          }
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Юридические лица, индивидуальные предприниматели, владельцы маркированных грузов"
+        },
+        "serviceOutput": "Реестр кодов Data Matrix, считанных при обработке заказа на отгрузку",
+        "termsOfService": "Услуга выполняется по отдельному заданию при выходе груза со склада"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://ambar-sklad.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Услуги",
+            "item": "https://ambar-sklad.ru/uslugi/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Для юридических лиц",
+            "item": "https://ambar-sklad.ru/category_uslugi/dlya-yuridicheskih-licz/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Честный ЗНАК при отгрузке",
+            "item": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сканирует\u00a0ли\u00a0«АМБАР» коды при\u00a0приемке груза?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. При\u00a0обычной приемке склад учитывает грузовые места по\u00a0номерам ГРМ, выполняет замер и\u00a0фотофиксацию. Data\u00a0Matrix сканируется только на\u00a0выходе, если услуга добавлена к\u00a0заявке на\u00a0отгрузку"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что\u00a0именно проверяет склад?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Склад проверяет возможность считать Data\u00a0Matrix терминалом и\u00a0фиксирует результат в\u00a0составе конкретного заказа. Проверка статуса, владельца или\u00a0легальности кода в\u00a0ГИС\u00a0МТ\u00a0не\u00a0входит в\u00a0стандартную услугу"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "К\u00a0чему привязываются считанные коды?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Коды привязываются к\u00a0заказу на\u00a0отгрузку и\u00a0соответствующим номерам ГРМ. Артикул и\u00a0наименование товара склад не\u00a0определяет, если эти данные не\u00a0были отдельно предоставлены поклажедателем"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0заказать сканирование только при\u00a0одной отгрузке?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Услугу можно подключить к\u00a0отдельной заявке на\u00a0выдачу или\u00a0доставку груза"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно\u00a0ли\u00a0вскрывать коробки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Если Data\u00a0Matrix находится внутри короба, потребуется согласовать вскрытие транспортной упаковки и\u00a0последующую переупаковку. Если коды доступны снаружи, вскрытие не\u00a0требуется"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что\u00a0будет, если код не\u00a0считывается?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сотрудник фиксирует проблему и\u00a0передает информацию поклажедателю. Дальнейшие действия выполняются по\u00a0согласованному заданию"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "В\u00a0каком формате передается реестр?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Базовый реестр передается в\u00a0XLSX. Возможность передачи XML указывается только после технического подтверждения"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Передает\u00a0ли\u00a0«АМБАР» реестр напрямую в\u00a0ГИС\u00a0МТ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. В\u00a0стандартной услуге склад передает реестр поклажедателю. Загрузка сведений в\u00a0учетную систему, ЭДО или\u00a0ГИС\u00a0МТ\u00a0выполняется поклажедателем самостоятельно"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Формирует\u00a0ли\u00a0склад УПД с\u00a0кодами маркировки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Формирование, подписание и\u00a0отправка УПД не\u00a0входят в\u00a0стандартную услугу сканирования на\u00a0выходе"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0проверить, находится\u00a0ли\u00a0код в\u00a0обороте?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Стандартная услуга не\u00a0включает онлайн-проверку статуса кода в\u00a0ГИС\u00a0МТ. Склад фиксирует символьную последовательность, считанную с\u00a0этикетки"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0связать каждый код с\u00a0конкретным ГРМ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, если коды сканируются последовательно по\u00a0отдельным грузовым местам и\u00a0такое требование указано в\u00a0заявке"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0отсканировать код короба или\u00a0паллеты вместо каждой единицы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Это\u00a0возможно только при\u00a0наличии корректного агрегированного кода и\u00a0заранее согласованного процесса. Стандартный сценарий предусматривает сканирование доступных Data\u00a0Matrix отдельных единиц"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что\u00a0нужно указать в\u00a0заявке?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Укажите номера ГРМ, предполагаемое количество кодов, расположение этикеток, разрешение на\u00a0вскрытие, формат реестра и\u00a0порядок действий при\u00a0расхождениях"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0заказать повторную упаковку после сканирования?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, если услуга упаковки добавлена к\u00a0заявке и\u00a0заранее согласованы упаковочные материалы и\u00a0требования к\u00a0грузу"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как\u00a0рассчитывается стоимость?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Стоимость зависит от\u00a0количества кодов и\u00a0ГРМ, доступности этикеток, необходимости вскрытия и\u00a0упаковки, формата реестра и\u00a0срока выполнения"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Работает\u00a0ли\u00a0услуга без\u00a0хранения груза в\u00a0«АМБАР»?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Возможность разовой обработки согласовывается с\u00a0менеджером. Основной сценарий услуги предназначен для\u00a0грузов, находящихся на\u00a0хранении в\u00a0«АМБАР»"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<main class="single_services">
+
+  <!-- Хлебные крошки -->
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <div class="container">
+      <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="name" content="Главная" />
+          <a itemprop="item" href="https://ambar-sklad.ru/" aria-label="Главная" data-chz-event="chz_outbound_home_click"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.666 15.8337V8.33366C16.666 8.06977 16.6068 7.81977 16.4885 7.58366C16.3702 7.34755 16.2071 7.1531 15.9993 7.00033L10.9993 3.25033C10.7077 3.0281 10.3743 2.91699 9.99935 2.91699C9.62435 2.91699 9.29102 3.0281 8.99935 3.25033L3.99935 7.00033C3.79102 7.1531 3.62768 7.34755 3.50935 7.58366C3.39102 7.81977 3.33213 8.06977 3.33268 8.33366V15.8337C3.33268 16.292 3.49602 16.6845 3.82268 17.0112C4.14935 17.3378 4.54157 17.5009 4.99935 17.5003H7.49935C7.73546 17.5003 7.93324 17.4203 8.09268 17.2603C8.25213 17.1003 8.33213 16.9025 8.33268 16.667V12.5003C8.33268 12.2642 8.41268 12.0664 8.57268 11.907C8.73268 11.7475 8.93046 11.6675 9.16602 11.667H10.8327C11.0688 11.667 11.2666 11.747 11.426 11.907C11.5855 12.067 11.6655 12.2648 11.666 12.5003V16.667C11.666 16.9031 11.746 17.1012 11.906 17.2612C12.066 17.4212 12.2638 17.5009 12.4993 17.5003H14.9993C15.4577 17.5003 15.8499 17.3373 16.176 17.0112C16.5021 16.685 16.6655 16.2925 16.666 15.8337Z" fill="#767676" /></svg></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="name" content="Услуги" />
+          <a itemprop="item" href="https://ambar-sklad.ru/uslugi/">Услуги</a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="name" content="Для юридических лиц" />
+          <a itemprop="item" href="https://ambar-sklad.ru/category_uslugi/dlya-yuridicheskih-licz/">Для&nbsp;юридических лиц</a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="name" content="Честный ЗНАК при отгрузке" />
+          <span aria-current="page">Честный&nbsp;ЗНАК при&nbsp;отгрузке</span>
+          <meta itemprop="position" content="4" />
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Блок 1. Первый экран -->
+  <section class="first_screen">
+    <div class="container">
+      <h1>Фиксация кодов «Честный&nbsp;ЗНАК» при&nbsp;отгрузке груза</h1>
+      <div class="first_screen_bottom">
+        <div class="first_screen_bottom_img">
+          <!-- Стикер-иллюстрация шаблона (как на /uslugi/fulfilment/). При необходимости заменить на свой стикер в том же стиле -->
+          <img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/stickers_svg11-11.svg?v=1782161134" alt="Фиксация кодов Честный ЗНАК при отгрузке груза со склада Амбар" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Блок 1 (продолжение под разделителем) + Блок 2. Краткий ответ -->
+  <section class="single_service_content">
+    <div class="container">
+      <p class="wp-block-paragraph">Сканируем коды Data&nbsp;Matrix перед выдачей груза, связываем их&nbsp;с&nbsp;заказом на&nbsp;отгрузку и&nbsp;номерами ГРМ, формируем реестр и&nbsp;передаем его&nbsp;поклажедателю</p>
+      <blockquote class="wp-block-quote">
+        <p class="wp-block-paragraph"><strong>Поклажедатель</strong>&nbsp;— организация, индивидуальный предприниматель или&nbsp;физическое лицо, передающие товар на&nbsp;склад для&nbsp;хранения и&nbsp;складской обработки</p>
+      </blockquote>
+      <figure class="wp-block-image size-full">
+        <picture>
+          <source srcset="assets/images/photo-hero.webp" type="image/webp">
+          <img src="assets/images/photo-hero.jpg" alt="Сканирование кода Data Matrix при отгрузке груза со склада АМБАР" width="1200" height="800" decoding="async" fetchpriority="high">
+        </picture>
+      </figure>
+      <ul class="wp-block-list">
+        <li>Контроль кодов непосредственно перед выходом груза со&nbsp;склада</li>
+        <li>Сканирование терминалом сбора данных</li>
+        <li>Привязка считанных кодов к&nbsp;заказу на&nbsp;отгрузку и&nbsp;ГРМ</li>
+        <li>Реестр фактически отсканированных кодов</li>
+        <li>Обработка без&nbsp;изменения базового грузового учета «АМБАР»</li>
+      </ul>
+      <!-- Кнопки первого экрана — в рамке встроенной формы (.leave_request_single_service), кнопки на всю ширину -->
+      <div class="leave_request leave_request_single_service chz_cta_box">
+        <div class="chz_cta">
+          <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Рассчитать стоимость сканирования</a>
+          <a class="btn btn_grey" href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/" data-chz-event="chz_outbound_storage_click">Заказать хранение груза</a>
+        </div>
+        <p class="wp-block-paragraph chz_cta_note">Услуга подключается к&nbsp;конкретной заявке на&nbsp;выдачу или&nbsp;отгрузку груза</p>
+      </div>
+
+      <h2 class="wp-block-heading">Что&nbsp;делает склад при&nbsp;отгрузке маркированного груза</h2>
+      <p class="wp-block-paragraph">Поклажедатель выбирает в&nbsp;личном кабинете грузовые места по&nbsp;номерам ГРМ и&nbsp;создает заявку на&nbsp;выдачу или&nbsp;доставку. Сотрудник склада подготавливает выбранный груз и&nbsp;сканирует доступные коды Data&nbsp;Matrix. Система фиксирует считанные коды в&nbsp;составе конкретного заказа на&nbsp;отгрузку и&nbsp;связывает их&nbsp;с&nbsp;соответствующими ГРМ</p>
+      <p class="wp-block-paragraph">После завершения обработки формируется реестр фактически отсканированных кодов. Реестр передается поклажедателю для&nbsp;дальнейшей работы в&nbsp;его&nbsp;учетной системе, ЭДО или&nbsp;личном кабинете «Честного&nbsp;ЗНАКа»</p>
+      <p class="wp-block-paragraph">Сканирование кодов Data&nbsp;Matrix терминалом сбора данных непосредственно при&nbsp;подготовке товара к&nbsp;отгрузке является стандартной контрольной точкой складской обработки маркированной продукции</p>
+      <figure class="wp-block-image size-full">
+        <picture>
+          <source srcset="assets/images/photo-otgruzka.webp" type="image/webp">
+          <img src="assets/images/photo-otgruzka.jpg" alt="Подготовка маркированного груза к выдаче со склада" width="1200" height="800" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <!-- Блок 3. Боли поклажедателя -->
+      <h2 class="wp-block-heading">Когда требуется фиксация кодов на&nbsp;выходе</h2>
+      <h3 class="wp-block-heading">Нужно знать, какие экземпляры уехали со&nbsp;склада</h3>
+      <p class="wp-block-paragraph">Поклажедателю требуется перечень кодов Data&nbsp;Matrix, фактически вошедших в&nbsp;конкретную отгрузку</p>
+      <h3 class="wp-block-heading">Коды находятся на&nbsp;товарах внутри грузового места</h3>
+      <p class="wp-block-paragraph">Перед выдачей необходимо открыть доступ к&nbsp;кодам, отсканировать их&nbsp;и&nbsp;снова подготовить груз к&nbsp;отправке</p>
+      <h3 class="wp-block-heading">Реестр нужен бухгалтерии или&nbsp;оператору ЭДО</h3>
+      <p class="wp-block-paragraph">Поклажедателю требуется машиночитаемый список кодов для&nbsp;дальнейшего оформления документов</p>
+      <h3 class="wp-block-heading">Нельзя допустить ручного переписывания кодов</h3>
+      <p class="wp-block-paragraph">Коды считываются ТСД и&nbsp;сохраняются в&nbsp;системе без&nbsp;ручного набора символьной последовательности</p>
+      <h3 class="wp-block-heading">В&nbsp;одной заявке несколько ГРМ</h3>
+      <p class="wp-block-paragraph">Считанные коды необходимо связать с&nbsp;конкретным заказом на&nbsp;отгрузку и&nbsp;выбранными грузовыми местами</p>
+      <h3 class="wp-block-heading">Нужно зафиксировать проблемные этикетки</h3>
+      <p class="wp-block-paragraph">При&nbsp;обработке могут быть выявлены отсутствующие, поврежденные, нечитаемые или&nbsp;повторно отсканированные коды</p>
+
+      <!-- Блок 4. ГРМ и Data Matrix -->
+      <h2 class="wp-block-heading">ГРМ учитывает грузовое место, Data&nbsp;Matrix&nbsp;— маркированную единицу</h2>
+      <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th scope="col">Элемент</th><th scope="col">Что&nbsp;идентифицирует</th><th scope="col">Когда используется</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ГРМ</td><td data-label="Что идентифицирует">Коробку, паллету, мешок или&nbsp;другое грузовое место</td><td data-label="Когда используется">При&nbsp;приемке, хранении, поиске и&nbsp;выдаче груза</td></tr>
+            <tr><td>Фотография ГРМ</td><td data-label="Что идентифицирует">Внешний вид принятого грузового места</td><td data-label="Когда используется">Для&nbsp;идентификации груза поклажедателем в&nbsp;личном кабинете</td></tr>
+            <tr><td>Data&nbsp;Matrix</td><td data-label="Что идентифицирует">Отдельную маркированную единицу товара</td><td data-label="Когда используется">При&nbsp;дополнительном сканировании в&nbsp;процессе отгрузки</td></tr>
+            <tr><td>Заказ на&nbsp;отгрузку</td><td data-label="Что идентифицирует">Конкретную операцию выдачи или&nbsp;доставки</td><td data-label="Когда используется">Для&nbsp;объединения выбранных ГРМ и&nbsp;считанных кодов</td></tr>
+            <tr><td>Реестр кодов</td><td data-label="Что идентифицирует">Перечень кодов, считанных в&nbsp;рамках заказа</td><td data-label="Когда используется">Для&nbsp;передачи поклажедателю после обработки</td></tr>
+          </tbody>
+        </table>
+      </figure>
+      <!-- Прямые определения терминов (ТЗ, раздел 11 — GEO) -->
+      <blockquote class="wp-block-quote">
+        <p class="wp-block-paragraph"><strong>ГРМ</strong>&nbsp;— идентификатор грузового места.<br><strong>Data&nbsp;Matrix</strong>&nbsp;— код отдельной маркированной единицы</p>
+      </blockquote>
+      <p class="wp-block-paragraph">При&nbsp;обычной приемке «АМБАР» не&nbsp;вскрывает грузовые места и&nbsp;не&nbsp;определяет содержащиеся внутри наименования или&nbsp;артикулы. Каждому месту присваивается ГРМ, выполняются замер и&nbsp;фотофиксация. Data&nbsp;Matrix сканируется отдельно только при&nbsp;заказе услуги на&nbsp;выходе со&nbsp;склада</p>
+      <figure class="wp-block-image size-full">
+        <picture>
+          <source srcset="assets/images/photo-schema.webp" type="image/webp">
+          <img src="assets/images/photo-schema.png" alt="Связь номера ГРМ с реестром кодов Честный ЗНАК" width="1200" height="670" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <!-- Блок 5. Состав услуги -->
+      <h2 class="wp-block-heading">Что&nbsp;входит в&nbsp;услугу</h2>
+      <ul class="wp-block-list">
+        <li>Получение задания на&nbsp;сканирование в&nbsp;составе заявки на&nbsp;отгрузку</li>
+        <li>Поиск выбранных грузовых мест по&nbsp;номерам ГРМ</li>
+        <li>Подготовка груза и&nbsp;обеспечение доступа к&nbsp;этикеткам</li>
+        <li>Сканирование доступных кодов Data&nbsp;Matrix терминалом сбора данных</li>
+        <li>Фиксация каждого считанного кода в&nbsp;системе</li>
+        <li>Связь кодов с&nbsp;заказом на&nbsp;отгрузку и&nbsp;выбранными ГРМ</li>
+        <li>Контроль повторного сканирования в&nbsp;рамках одной операции</li>
+        <li>Фиксация кодов, которые не&nbsp;удалось считать</li>
+        <li>Формирование итогового реестра</li>
+        <li>Передача реестра поклажедателю</li>
+        <li>Повторная упаковка груза при&nbsp;наличии отдельного задания</li>
+        <li>Передача подготовленного груза на&nbsp;выдачу или&nbsp;доставку</li>
+      </ul>
+
+      <!-- Блок 6. Процесс: метка шага → заголовок → текст -->
+      <h2 class="wp-block-heading">Как&nbsp;проходит сканирование при&nbsp;отгрузке</h2>
+      <p class="wp-block-paragraph chz_step">Шаг 1</p>
+      <h3 class="wp-block-heading">Поклажедатель создает заявку</h3>
+      <p class="wp-block-paragraph">В&nbsp;личном кабинете выбираются ГРМ, которые необходимо выдать, доставить получателю или&nbsp;направить на&nbsp;другой склад</p>
+      <p class="wp-block-paragraph chz_step">Шаг 2</p>
+      <h3 class="wp-block-heading">К&nbsp;заявке добавляется услуга</h3>
+      <p class="wp-block-paragraph">В&nbsp;заявке указывается необходимость сканирования кодов «Честный&nbsp;ЗНАК», требуемый формат реестра и&nbsp;особые требования к&nbsp;обработке</p>
+      <p class="wp-block-paragraph chz_step">Шаг 3</p>
+      <h3 class="wp-block-heading">Склад подготавливает груз</h3>
+      <p class="wp-block-paragraph">Сотрудник склада находит выбранные ГРМ и&nbsp;перемещает их&nbsp;в&nbsp;зону обработки заказа</p>
+      <p class="wp-block-paragraph chz_step">Шаг 4</p>
+      <h3 class="wp-block-heading">Открывается доступ к&nbsp;кодам</h3>
+      <p class="wp-block-paragraph">Если Data&nbsp;Matrix находится внутри короба или&nbsp;под&nbsp;транспортной упаковкой, доступ к&nbsp;коду обеспечивается только по&nbsp;согласованному заданию поклажедателя</p>
+      <p class="wp-block-paragraph chz_step">Шаг 5</p>
+      <h3 class="wp-block-heading">Коды сканируются</h3>
+      <p class="wp-block-paragraph">Сотрудник считывает доступные Data&nbsp;Matrix терминалом сбора данных. Каждый считанный код фиксируется в&nbsp;составе конкретного заказа</p>
+      <p class="wp-block-paragraph chz_step">Шаг 6</p>
+      <h3 class="wp-block-heading">Формируется реестр</h3>
+      <p class="wp-block-paragraph">После завершения операции система формирует перечень фактически отсканированных кодов с&nbsp;привязкой к&nbsp;заказу и&nbsp;ГРМ</p>
+      <p class="wp-block-paragraph chz_step">Шаг 7</p>
+      <h3 class="wp-block-heading">Реестр передается поклажедателю</h3>
+      <p class="wp-block-paragraph">Поклажедатель получает файл и&nbsp;использует его&nbsp;для&nbsp;дальнейшей работы в&nbsp;своей учетной системе, ЭДО или&nbsp;ГИС&nbsp;МТ</p>
+      <p class="wp-block-paragraph chz_step">Шаг 8</p>
+      <h3 class="wp-block-heading">Груз передается на&nbsp;выход</h3>
+      <p class="wp-block-paragraph">После завершения обработки груз выдается представителю поклажедателя, передается перевозчику или&nbsp;направляется получателю</p>
+
+      <!-- Основная кнопка после блока 6 -->
+      <div class="chz_cta">
+        <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Рассчитать стоимость сканирования</a>
+      </div>
+
+      <!-- Блок 7. Результат услуги -->
+      <h2 class="wp-block-heading">Что&nbsp;получает поклажедатель</h2>
+      <h3 class="wp-block-heading">Реестр считанных кодов</h3>
+      <p class="wp-block-paragraph">Файл с&nbsp;кодами Data&nbsp;Matrix, которые были фактически отсканированы при&nbsp;обработке заказа</p>
+      <h3 class="wp-block-heading">Связь с&nbsp;заказом</h3>
+      <p class="wp-block-paragraph">В&nbsp;реестре указывается номер заявки или&nbsp;заказа на&nbsp;отгрузку</p>
+      <h3 class="wp-block-heading">Связь с&nbsp;грузовыми местами</h3>
+      <p class="wp-block-paragraph">Коды группируются или&nbsp;связываются с&nbsp;номерами ГРМ, из&nbsp;которых они были считаны, если процесс обработки позволяет установить такую связь</p>
+      <h3 class="wp-block-heading">Результат обработки</h3>
+      <p class="wp-block-paragraph">Отдельно фиксируются успешно считанные, повторные и&nbsp;нечитаемые коды</p>
+      <h3 class="wp-block-heading">Данные для&nbsp;дальнейшего учета</h3>
+      <p class="wp-block-paragraph">Поклажедатель получает информацию для&nbsp;загрузки или&nbsp;ручной обработки в&nbsp;собственной учетной системе</p>
+      <h3 class="wp-block-heading">Форматы</h3>
+      <ul class="wp-block-list">
+        <li>XLSX</li>
+        <!-- XML — публиковать только после технического подтверждения (ТЗ, блок 7):
+        <li>XML</li> -->
+      </ul>
+      <figure class="wp-block-image size-full">
+        <picture>
+          <source srcset="assets/images/photo-reestr.webp" type="image/webp">
+          <img src="assets/images/photo-reestr.jpg" alt="Реестр кодов Data Matrix по заказу на отгрузку" width="1200" height="800" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <!-- Блок 8. Возможные результаты -->
+      <h2 class="wp-block-heading">Какие ситуации фиксируются при&nbsp;сканировании</h2>
+      <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th scope="col">Результат</th><th scope="col">Действие склада</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Код считан</td><td data-label="Действие склада">Код включается в&nbsp;реестр</td></tr>
+            <tr><td>Код повторно считан в&nbsp;рамках заказа</td><td data-label="Действие склада">Повтор фиксируется и&nbsp;не&nbsp;добавляется как&nbsp;новая единица</td></tr>
+            <tr><td>Код не&nbsp;считывается</td><td data-label="Действие склада">Информация передается ответственному сотруднику и&nbsp;поклажедателю</td></tr>
+            <tr><td>Этикетка отсутствует</td><td data-label="Действие склада">Единица фиксируется как&nbsp;не&nbsp;имеющая доступного кода</td></tr>
+            <tr><td>Этикетка повреждена</td><td data-label="Действие склада">Результат указывается в&nbsp;отчете по&nbsp;обработке</td></tr>
+            <tr><td>Код закрыт упаковкой</td><td data-label="Действие склада">Требуется разрешение на&nbsp;вскрытие или&nbsp;изменение упаковки</td></tr>
+            <tr><td>Количество считанных кодов не&nbsp;совпадает с&nbsp;заданием</td><td data-label="Действие склада">Отгрузка обрабатывается по&nbsp;согласованному сценарию</td></tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <!-- Блок 9. Границы услуги -->
+      <h2 class="wp-block-heading">Что&nbsp;важно учесть</h2>
+      <blockquote class="wp-block-quote">
+        <ul class="wp-block-list">
+          <li>Услуга выполняется только при&nbsp;выходе груза со&nbsp;склада</li>
+          <li>При&nbsp;обычной входной приемке коды Data&nbsp;Matrix не&nbsp;сканируются</li>
+          <li>Склад ведет учет по&nbsp;грузовым местам ГРМ, а&nbsp;не&nbsp;по&nbsp;артикулам внутри закрытого груза</li>
+          <li>Склад фиксирует коды, доступные для&nbsp;физического сканирования</li>
+          <li>Реестр содержит результаты складского сканирования</li>
+          <li>Реестр сам по&nbsp;себе не&nbsp;изменяет статус кодов в&nbsp;ГИС&nbsp;МТ</li>
+          <li>Передача сведений в&nbsp;«Честный&nbsp;ЗНАК», формирование УПД, подписание УКЭП и&nbsp;работа через ЭДО не&nbsp;входят в&nbsp;стандартную услугу</li>
+          <li>Ответственность за&nbsp;дальнейшую загрузку реестра и&nbsp;оформление электронных документов остается у&nbsp;поклажедателя, если иное не&nbsp;предусмотрено отдельным соглашением</li>
+        </ul>
+      </blockquote>
+      <p class="wp-block-paragraph">Передача кодов между участниками оборота через ГИС&nbsp;МТ&nbsp;требует надлежащего электронного документа и&nbsp;его&nbsp;обработки через ЭДО; складской файл с&nbsp;перечнем кодов не&nbsp;заменяет этот процесс</p>
+
+      <!-- Основная кнопка после блока 9 -->
+      <div class="chz_cta">
+        <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Рассчитать стоимость сканирования</a>
+      </div>
+
+      <!-- Блок 10. Кому подходит -->
+      <h2 class="wp-block-heading">Кому подходит услуга</h2>
+      <ul class="wp-block-list">
+        <li>Компаниям, хранящим на&nbsp;складе закрытые короба или&nbsp;паллеты с&nbsp;маркированной продукцией</li>
+        <li>Поклажедателям, которым не&nbsp;нужен поэкземплярный учет кодов на&nbsp;всем сроке хранения</li>
+        <li>Поставщикам, которым требуется получить фактический перечень кодов перед передачей груза покупателю</li>
+        <li>Интернет-магазинам и&nbsp;селлерам, формирующим отдельные отгрузки со&nbsp;склада</li>
+        <li>Оптовым компаниям, передающим маркированный товар контрагентам</li>
+        <li>Владельцам сезонных товарных запасов</li>
+        <li>Компаниям, которым требуется связать список кодов с&nbsp;конкретной выдачей и&nbsp;номерами ГРМ</li>
+      </ul>
+
+      <!-- Блок 11. Требования к грузу -->
+      <h2 class="wp-block-heading">Что&nbsp;сообщить перед заказом услуги</h2>
+      <ul class="wp-block-list">
+        <li>Номера ГРМ, включенные в&nbsp;отгрузку</li>
+        <li>Предполагаемое количество кодов</li>
+        <li>Расположение Data&nbsp;Matrix: снаружи или&nbsp;внутри упаковки</li>
+        <li>Разрешение на&nbsp;вскрытие транспортной упаковки</li>
+        <li>Требование к&nbsp;повторной упаковке</li>
+        <li>Нужна&nbsp;ли&nbsp;связь каждого кода с&nbsp;конкретным ГРМ</li>
+        <li>Требуемый формат реестра</li>
+        <li>Срок подготовки заказа</li>
+        <li>Сценарий действий при&nbsp;нечитаемом или&nbsp;отсутствующем коде</li>
+        <li>Контактное лицо поклажедателя для&nbsp;согласования расхождений</li>
+      </ul>
+
+      <!-- Блок 12. Стоимость -->
+      <h2 class="wp-block-heading">Стоимость сканирования кодов при&nbsp;отгрузке</h2>
+      <p class="wp-block-paragraph">Стоимость рассчитывается по&nbsp;заданию на&nbsp;обработку и&nbsp;зависит от&nbsp;количества кодов, числа грузовых мест, доступности этикеток, необходимости вскрытия и&nbsp;повторной упаковки, формата реестра и&nbsp;срока выполнения</p>
+      <ul class="wp-block-list">
+        <li>обработка заказа на&nbsp;отгрузку;</li>
+        <li>сканирование одного кода;</li>
+        <li>вскрытие грузового места;</li>
+        <li>повторная упаковка;</li>
+        <li>формирование реестра;</li>
+        <li>срочная обработка;</li>
+        <li>дополнительные складские операции</li>
+      </ul>
+      <!-- Цены не публикуются до утверждения тарифа (ТЗ, блок 12).
+           После утверждения вывести таблицу в разметке шаблона .tarifs_block
+           (как на /uslugi/fulfilment/): позиция · единица измерения · стоимость,
+           и минимальную стоимость заказа. -->
+
+      <!-- Кнопка блока 12 (повтор основной кнопки после блока 12) -->
+      <div class="chz_cta">
+        <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Получить расчет</a>
+      </div>
+
+      <!-- Блок 13. Хранение грузов -->
+      <h2 class="wp-block-heading">Храните груз и&nbsp;заказывайте его&nbsp;обработку в&nbsp;одном месте</h2>
+      <p class="wp-block-paragraph">«АМБАР» принимает грузы компаний и&nbsp;предпринимателей на&nbsp;ответственное хранение. Каждому грузовому месту присваивается ГРМ, выполняется фотофиксация, а&nbsp;данные отображаются в&nbsp;личном кабинете. Поклажедатель дистанционно выбирает нужные ГРМ и&nbsp;создает заявку на&nbsp;выдачу, доставку или&nbsp;дополнительную обработку</p>
+      <figure class="wp-block-image size-full">
+        <picture>
+          <source srcset="assets/images/photo-lk.webp" type="image/webp">
+          <img src="assets/images/photo-lk.jpg" alt="Грузовые места ГРМ в личном кабинете склада АМБАР" width="1200" height="800" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      <!-- Ссылки списком — как «Читайте так же» в статьях блога (ul > li > a > b) -->
+      <ul class="wp-block-list chz_links">
+        <li><a href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/" data-chz-event="chz_outbound_storage_click"><b>Узнать об&nbsp;ответственном хранении</b></a></li>
+        <li><a href="https://ambar-sklad.ru/" data-chz-event="chz_outbound_home_click"><b>Перейти на&nbsp;главную страницу</b></a></li>
+        <li><a href="https://newlk.ambar-sklad.ru/login" target="_blank" rel="noopener" data-chz-event="chz_outbound_lk_click"><b>Войти в&nbsp;личный кабинет</b></a></li>
+      </ul>
+
+      <!-- Встроенная форма страниц услуг (Contact Form 7, как на /uslugi/fulfilment/).
+           ИЗМЕНЕНИЕ: над полем телефона добавлен текст .leave_request_single_service_text -->
+      <div class="leave_request leave_request_single_service">
+        <div class="wpcf7">
+          <form class="wpcf7-form" action="#" method="post" data-prototype-inline>
+            <p class="leave_request_single_service_text">Нужно только забрать и&nbsp;обработать отдельный груз? Оставьте заявку&nbsp;— менеджер проверит возможность выполнения операции</p>
+            <div class="leave_request_form_item" data-index="0">
+              <span class="wpcf7-form-control-wrap" data-name="number_client"><input type="tel" name="number_client" autocomplete="tel" placeholder="Ваш номер" required></span>
+            </div>
+            <div class="leave_request_form_item" data-index="1">
+              <span class="wpcf7-form-control-wrap" data-name="personal"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="personal" value="1" checked><span class="wpcf7-list-item-label">Соглашаюсь с <a href="https://ambar-sklad.ru/soglasie-na-obrabotku-personalnyh-dannyh">обработкой своих персональных данных</a></span></label></span></span></span>
+              <span class="wpcf7-form-control-wrap" data-name="policy"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="policy" value="1" checked><span class="wpcf7-list-item-label">Принимаю <a href="https://ambar-sklad.ru/politika-obrabotki-personalnyh-dannyh">политику обработки персональных данных</a></span></label></span></span></span>
+            </div>
+            <div class="leave_request_form_item" data-index="2">
+              <input class="btn" type="submit" value="Отправить заявку">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Блок 15. FAQ (разметка FAQPage — в JSON-LD в <head>, без дублирующей микроразметки) -->
+      <div class="faq">
+        <h2>Вопросы о&nbsp;сканировании кодов «Честный&nbsp;ЗНАК»</h2>
+        <div class="faq_items">
+          <div class="faq_item">
+            <h3>Сканирует&nbsp;ли&nbsp;«АМБАР» коды при&nbsp;приемке груза?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Нет. При&nbsp;обычной приемке склад учитывает грузовые места по&nbsp;номерам ГРМ, выполняет замер и&nbsp;фотофиксацию. Data&nbsp;Matrix сканируется только на&nbsp;выходе, если услуга добавлена к&nbsp;заявке на&nbsp;отгрузку</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Что&nbsp;именно проверяет склад?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Склад проверяет возможность считать Data&nbsp;Matrix терминалом и&nbsp;фиксирует результат в&nbsp;составе конкретного заказа. Проверка статуса, владельца или&nbsp;легальности кода в&nbsp;ГИС&nbsp;МТ&nbsp;не&nbsp;входит в&nbsp;стандартную услугу</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>К&nbsp;чему привязываются считанные коды?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Коды привязываются к&nbsp;заказу на&nbsp;отгрузку и&nbsp;соответствующим номерам ГРМ. Артикул и&nbsp;наименование товара склад не&nbsp;определяет, если эти данные не&nbsp;были отдельно предоставлены поклажедателем</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Можно&nbsp;ли&nbsp;заказать сканирование только при&nbsp;одной отгрузке?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Да. Услугу можно подключить к&nbsp;отдельной заявке на&nbsp;выдачу или&nbsp;доставку груза</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Нужно&nbsp;ли&nbsp;вскрывать коробки?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Если Data&nbsp;Matrix находится внутри короба, потребуется согласовать вскрытие транспортной упаковки и&nbsp;последующую переупаковку. Если коды доступны снаружи, вскрытие не&nbsp;требуется</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Что&nbsp;будет, если код не&nbsp;считывается?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Сотрудник фиксирует проблему и&nbsp;передает информацию поклажедателю. Дальнейшие действия выполняются по&nbsp;согласованному заданию</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>В&nbsp;каком формате передается реестр?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Базовый реестр передается в&nbsp;XLSX. Возможность передачи XML указывается только после технического подтверждения</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Передает&nbsp;ли&nbsp;«АМБАР» реестр напрямую в&nbsp;ГИС&nbsp;МТ?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Нет. В&nbsp;стандартной услуге склад передает реестр поклажедателю. Загрузка сведений в&nbsp;учетную систему, ЭДО или&nbsp;ГИС&nbsp;МТ&nbsp;выполняется поклажедателем самостоятельно</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Формирует&nbsp;ли&nbsp;склад УПД с&nbsp;кодами маркировки?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Нет. Формирование, подписание и&nbsp;отправка УПД не&nbsp;входят в&nbsp;стандартную услугу сканирования на&nbsp;выходе</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Можно&nbsp;ли&nbsp;проверить, находится&nbsp;ли&nbsp;код в&nbsp;обороте?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Стандартная услуга не&nbsp;включает онлайн-проверку статуса кода в&nbsp;ГИС&nbsp;МТ. Склад фиксирует символьную последовательность, считанную с&nbsp;этикетки</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Можно&nbsp;ли&nbsp;связать каждый код с&nbsp;конкретным ГРМ?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Да, если коды сканируются последовательно по&nbsp;отдельным грузовым местам и&nbsp;такое требование указано в&nbsp;заявке</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Можно&nbsp;ли&nbsp;отсканировать код короба или&nbsp;паллеты вместо каждой единицы?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Это&nbsp;возможно только при&nbsp;наличии корректного агрегированного кода и&nbsp;заранее согласованного процесса. Стандартный сценарий предусматривает сканирование доступных Data&nbsp;Matrix отдельных единиц</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Что&nbsp;нужно указать в&nbsp;заявке?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Укажите номера ГРМ, предполагаемое количество кодов, расположение этикеток, разрешение на&nbsp;вскрытие, формат реестра и&nbsp;порядок действий при&nbsp;расхождениях</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Можно&nbsp;ли&nbsp;заказать повторную упаковку после сканирования?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Да, если услуга упаковки добавлена к&nbsp;заявке и&nbsp;заранее согласованы упаковочные материалы и&nbsp;требования к&nbsp;грузу</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Как&nbsp;рассчитывается стоимость?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Стоимость зависит от&nbsp;количества кодов и&nbsp;ГРМ, доступности этикеток, необходимости вскрытия и&nbsp;упаковки, формата реестра и&nbsp;срока выполнения</p>
+            </div></div></div>
+          </div>
+          <div class="faq_item">
+            <h3>Работает&nbsp;ли&nbsp;услуга без&nbsp;хранения груза в&nbsp;«АМБАР»?</h3>
+            <div class="faq_item_content"><div class="faq_item_content_inner"><div class="faq_item_content_top">
+              <p>Возможность разовой обработки согласовывается с&nbsp;менеджером. Основной сценарий услуги предназначен для&nbsp;грузов, находящихся на&nbsp;хранении в&nbsp;«АМБАР»</p>
+            </div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Основная кнопка после блока 15 -->
+      <div class="chz_cta">
+        <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Рассчитать стоимость сканирования</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Блок 14. Полезные статьи — отдельная секция после FAQ.
+       Разметка карточек — как на странице /blog/ и в блоке «Читайте также» статей
+       (section.posts > ul.posts_list > li.post_item > a: обложка, заголовок, анонс, «Читать»).
+       Ссылки — продакшен-адреса статей. Обложки: миниатюры записей (1536 × 1024). -->
+  <section class="posts posts--related" aria-labelledby="posts-title-related">
+    <div class="container">
+      <h2 class="posts_section_title" id="posts-title-related">Полезно знать перед отгрузкой маркированного груза</h2>
+      <ul class="posts_list">
+        <li class="post_item">
+          <a href="../website_article_grm/index.html" data-chz-event="chz_outbound_article_click">
+            <div class="post_item_img">
+              <!-- Обложка статьи = её миниатюра записи. В прототипе — тот же файл из папки статьи -->
+              <picture>
+                <source srcset="../website_article_grm/assets/images/cover.webp" type="image/webp">
+                <img src="../website_article_grm/assets/images/cover.jpg" alt="Грузовое место с номером ГРМ и маркированные товары с кодами Data Matrix" width="1536" height="1024" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <h3 class="post_item_title">ГРМ и&nbsp;Data&nbsp;Matrix: два уровня учета груза на&nbsp;складе</h3>
+            <p class="post_item_desc">ГРМ идентифицирует коробку или&nbsp;паллету на&nbsp;складе, а&nbsp;Data&nbsp;Matrix&nbsp;— маркированную единицу товара. Разбираем, как&nbsp;эти коды работают при&nbsp;отгрузке</p>
+            <div class="post_item_btn btn">Читать</div>
+          </a>
+        </li>
+        <li class="post_item">
+          <a href="../website_article_reestr/index.html" data-chz-event="chz_outbound_article_click">
+            <div class="post_item_img">
+              <!-- Обложка статьи = её миниатюра записи. В прототипе — тот же файл из папки статьи -->
+              <picture>
+                <source srcset="../website_article_reestr/assets/images/cover.webp" type="image/webp">
+                <img src="../website_article_reestr/assets/images/cover.jpg" alt="Сотрудник склада сканирует коды Data Matrix при подготовке отгрузки" width="1536" height="1024" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <h3 class="post_item_title">Как&nbsp;получить реестр кодов Data&nbsp;Matrix при&nbsp;отгрузке со&nbsp;склада</h3>
+            <p class="post_item_desc">Какие данные передать складу, как&nbsp;проходит сканирование Data&nbsp;Matrix и&nbsp;что&nbsp;входит в&nbsp;реестр кодов по&nbsp;конкретному заказу на&nbsp;отгрузку</p>
+            <div class="post_item_btn btn">Читать</div>
+          </a>
+        </li>
+        <li class="post_item">
+          <a href="../website_article_podgotovka/index.html" data-chz-event="chz_outbound_article_click">
+            <div class="post_item_img">
+              <!-- Обложка статьи = её миниатюра записи. В прототипе — тот же файл из папки статьи -->
+              <picture>
+                <source srcset="../website_article_podgotovka/assets/images/cover.webp" type="image/webp">
+                <img src="../website_article_podgotovka/assets/images/cover.jpg" alt="Подготовка маркированного груза к отгрузке со склада" width="1536" height="1024" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <h3 class="post_item_title">«Честный&nbsp;ЗНАК» при&nbsp;отгрузке: что&nbsp;подготовить владельцу груза</h3>
+            <p class="post_item_desc">Чек-лист владельца маркированного груза: ГРМ, количество кодов, доступ к&nbsp;этикеткам, упаковка, формат реестра и&nbsp;действия при&nbsp;расхождениях</p>
+            <div class="post_item_btn btn">Читать</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Блок 16. Финальный CTA — в рамке встроенной формы, по узкой ширине контента -->
+  <section class="single_service_content">
+    <div class="container">
+      <div class="leave_request leave_request_single_service chz_cta_box chz_final">
+        <h2 class="wp-block-heading">Получите реестр кодов по&nbsp;конкретной отгрузке</h2>
+        <p class="wp-block-paragraph">Сообщите номера ГРМ, количество грузовых мест, предполагаемое число кодов и&nbsp;срок выдачи. Менеджер проверит задание, рассчитает стоимость и&nbsp;согласует порядок обработки</p>
+        <div class="chz_cta">
+          <a class="btn" href="#chz-popup" data-fancybox data-type="inline">Заказать сканирование кодов</a>
+          <a class="btn btn_grey" href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/" data-chz-event="chz_outbound_storage_click">Рассчитать хранение груза</a>
+        </div>
+      </div>
+      <!-- Дата обновления и редактор (ТЗ, раздел 11 — GEO); дата совпадает с dateModified в JSON-LD -->
+      <p class="wp-block-paragraph single_service_meta">Обновлено: <time datetime="2026-10-26">26&nbsp;октября 2026</time> · Редакция склада АМБАР</p>
+    </div>
+  </section>
+
+
+  <!-- Форма расчета (ТЗ, раздел 6) — модальное окно, как «Заказать звонок» / «Получить консультацию»
+       на сайте (.callback_popup.modal, открывается Fancybox по data-fancybox). -->
+  <div id="chz-popup" class="callback_popup modal">
+    <p class="callback_popup_title">Рассчитать сканирование кодов при&nbsp;отгрузке</p>
+    <div class="callback_popup_form leave_request_form" id="chz-form">
+        <!-- Прототип. На сайте — форма Contact Form 7 с этими полями -->
+        <div class="wpcf7">
+          <form class="wpcf7-form" action="#" method="post" data-prototype>
+            <div class="leave_request_form_row">
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-name">Имя</label>
+                <span class="wpcf7-form-control-wrap"><input type="text" id="chz-name" name="name_client" autocomplete="name" placeholder="Ваше имя"></span>
+              </div>
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-company">Компания</label>
+                <span class="wpcf7-form-control-wrap"><input type="text" id="chz-company" name="company" autocomplete="organization" placeholder="Название компании"></span>
+              </div>
+            </div>
+
+            <div class="leave_request_form_row">
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-phone">Телефон</label>
+                <span class="wpcf7-form-control-wrap"><input type="tel" id="chz-phone" name="number_client" autocomplete="tel" placeholder="Ваш номер" required></span>
+              </div>
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-email">Электронная почта</label>
+                <span class="wpcf7-form-control-wrap"><input type="email" id="chz-email" name="email" autocomplete="email" placeholder="name@company.ru"></span>
+              </div>
+            </div>
+
+            <div class="leave_request_form_item">
+              <label class="leave_request_form_label" for="chz-client">Являетесь&nbsp;ли&nbsp;действующим поклажедателем «АМБАР»</label>
+              <span class="wpcf7-form-control-wrap">
+                <select id="chz-client" name="is_client">
+                  <option value="">Выберите</option>
+                  <option>Да</option>
+                  <option>Нет</option>
+                </select>
+              </span>
+            </div>
+
+            <div class="leave_request_form_item">
+              <label class="leave_request_form_label" for="chz-contract">Номер договора или&nbsp;личного кабинета (необязательно)</label>
+              <span class="wpcf7-form-control-wrap"><input type="text" id="chz-contract" name="contract"></span>
+            </div>
+
+            <div class="leave_request_form_row">
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-grm">Количество ГРМ</label>
+                <span class="wpcf7-form-control-wrap"><input type="number" id="chz-grm" name="grm_count" min="1" inputmode="numeric"></span>
+              </div>
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-codes">Предполагаемое количество кодов Data&nbsp;Matrix</label>
+                <span class="wpcf7-form-control-wrap"><input type="number" id="chz-codes" name="codes_count" min="1" inputmode="numeric"></span>
+              </div>
+            </div>
+
+            <div class="leave_request_form_row">
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-location">Расположение кодов</label>
+                <span class="wpcf7-form-control-wrap">
+                  <select id="chz-location" name="codes_location">
+                    <option value="">Выберите</option>
+                    <option>Снаружи</option>
+                    <option>Внутри</option>
+                    <option>Неизвестно</option>
+                  </select>
+                </span>
+              </div>
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-opening">Требуется вскрытие упаковки</label>
+                <span class="wpcf7-form-control-wrap">
+                  <select id="chz-opening" name="opening">
+                    <option value="">Выберите</option>
+                    <option>Да</option>
+                    <option>Нет</option>
+                    <option>Требуется консультация</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+
+            <div class="leave_request_form_row">
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-repack">Требуется повторная упаковка</label>
+                <span class="wpcf7-form-control-wrap">
+                  <select id="chz-repack" name="repack">
+                    <option value="">Выберите</option>
+                    <option>Да</option>
+                    <option>Нет</option>
+                  </select>
+                </span>
+              </div>
+              <div class="leave_request_form_item">
+                <label class="leave_request_form_label" for="chz-format">Формат реестра</label>
+                <span class="wpcf7-form-control-wrap">
+                  <select id="chz-format" name="registry_format">
+                    <option value="">Выберите</option>
+                    <option>XLSX</option>
+                    <!-- показывать только после подтверждения доступности XML:
+                    <option>XML</option> -->
+                    <option>Требуется консультация</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+
+            <div class="leave_request_form_item">
+              <label class="leave_request_form_label" for="chz-date">Плановая дата отгрузки</label>
+              <!-- Поле даты: ручной ввод по маске ДД.ММ.ГГГГ + календарь в стиле сайта (js/chz-service.js) -->
+              <span class="wpcf7-form-control-wrap chz_date"><input type="text" id="chz-date" name="shipment_date" inputmode="numeric" placeholder="ДД.ММ.ГГГГ" maxlength="10" autocomplete="off" pattern="\d{2}\.\d{2}\.\d{4}" data-datepicker aria-haspopup="dialog"></span>
+            </div>
+
+            <div class="leave_request_form_item">
+              <label class="leave_request_form_label" for="chz-comment">Комментарий</label>
+              <span class="wpcf7-form-control-wrap"><textarea id="chz-comment" name="comment"></textarea></span>
+            </div>
+
+            <!-- Два согласия — как во встроенной форме «Отправить заявку» и окне «Заказать звонок» -->
+            <div class="leave_request_form_item">
+              <span class="wpcf7-form-control-wrap" data-name="personal"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="personal" value="1" checked required><span class="wpcf7-list-item-label">Соглашаюсь с <a href="https://ambar-sklad.ru/soglasie-na-obrabotku-personalnyh-dannyh">обработкой своих персональных данных</a></span></label></span></span></span>
+              <span class="wpcf7-form-control-wrap" data-name="policy"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="policy" value="1" checked required><span class="wpcf7-list-item-label">Принимаю <a href="https://ambar-sklad.ru/politika-obrabotki-personalnyh-dannyh">политику обработки персональных данных</a></span></label></span></span></span>
+            </div>
+
+            <div class="leave_request_form_item">
+              <input class="btn" type="submit" value="Получить расчет">
+            </div>
+          </form>
+        </div>
+
+        <div class="leave_request_form_success" data-form-success hidden>
+          <p>Заявка отправлена. Менеджер свяжется с&nbsp;вами, уточнит параметры груза и&nbsp;согласует порядок обработки</p>
+        </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://ambar-sklad.ru/wp-content/themes/devseopro.com/assets/js/fancybox.js"></script>
+<script src="js/prototype.js"></script>
+<script src="js/chz-service.js" defer></script>
+
+<!-- Только для превью: возврат к списку страниц -->
+<a href="../index.html" style="position:fixed;top:12px;right:12px;z-index:10000;padding:8px 14px;border-radius:8px;background:#212A33;color:#fff;font:600 14px/20px Manrope,system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.18)">← Все страницы</a>
+</body>
+</html>

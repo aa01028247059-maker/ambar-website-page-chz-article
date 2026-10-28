@@ -1,0 +1,656 @@
+/* =============================================
+   Страница услуги «Фиксация кодов „Честный ЗНАК“ при отгрузке груза»
+   Дополнение к single_service.css — подключать ПОСЛЕ него.
+
+   Страница собрана из компонентов шаблона страниц услуг:
+   .breadcrumbs, .first_screen (H1 + разделитель со стикером),
+   .single_service_content (h2, h3, p, ul, figure, blockquote, .faq),
+   .posts (карточки статей, как в блоге), .leave_request (форма).
+   Здесь — только то, чего в шаблоне нет; значения (цвета, радиусы,
+   отступы, размеры шрифтов) взяты из single_service.css.
+   ============================================= */
+
+
+/* ---- Заглушка изображения (до появления фото) ---- */
+.img_stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  padding: 20px;
+  background: #e1e6eb;
+  color: #626a73;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.single_service_content figure .img_stub {
+  aspect-ratio: 3 / 2;
+}
+
+
+/* ---- Дата обновления и редакция (GEO), в конце страницы ---- */
+.single_service_content p.single_service_meta {
+  margin-top: 35px;
+  font-size: 14px;
+  color: #626a73;
+}
+
+
+/* ---- Кнопки внутри контента ---- */
+.chz_cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.chz_cta .btn {
+  max-width: max-content;
+}
+
+/* ---- Блок 13: ссылки списком — как «Читайте так же» в статьях ----
+   Цвет и подчеркивание — из blog.css (.entry-content a);
+   в single_service.css ссылки в контенте не оформлены */
+.single_service_content .chz_links a {
+  color: #d92d2b;
+  text-decoration: underline;
+  transition: color .2s ease;
+}
+
+.single_service_content .chz_links a:hover {
+  color: #c42624;
+  text-decoration: none;
+}
+
+/* ---- Блок 13: текст над полем во встроенной форме заявки ---- */
+.leave_request_single_service p.leave_request_single_service_text {
+  margin: 0;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+.single_service_content p.chz_cta_note {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #626a73;
+}
+
+
+/* ---- Группы «подзаголовок h3 + текст» в контенте ----
+   Блоки 3, 6, 7. Система отступов:
+   h2 → первая группа ...... 35px (margin-bottom h2 шаблона)
+   между группами .......... 30px
+   h3 → текст .............. 10px
+   метка шага → h3 ......... 5px
+   Только прямые потомки .container — h3 в .faq не затрагиваются. */
+.single_service_content .container > h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.single_service_content .container > h2 + h3,
+.single_service_content .container > h2 + p.chz_step {
+  margin-top: 0;
+}
+
+/* метка шага: «Шаг 1» — фирменным красным, отдельной строкой над h3 */
+.single_service_content p.chz_step {
+  margin: 30px 0 5px;
+  color: #d92d2b;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.single_service_content p.chz_step + h3 {
+  margin-top: 0;
+}
+
+/* у p в шаблоне margin-top: 15px — убираем, чтобы h3 → текст было 10px */
+.single_service_content .container > h3 + p,
+.single_service_content .container > h3 + ul {
+  margin-top: 0;
+}
+
+/* ---- Блок «Полезно знать…»: карточки статей ----
+   Разметка и правила — из blog.css (страница /blog/ и «Читайте также»
+   в статьях). В single_service.css этих правил нет, поэтому они
+   перенесены сюда без изменений. Правило .posts { margin: 0 } не
+   переносим: отступ секции задает section { margin: 125px 0 } шаблона. */
+.posts_list {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.posts_list li {
+  flex: 1 0 calc((100% - 60px) / 3);
+  max-width: calc((100% - 60px) / 3);
+}
+
+.posts_list li a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+
+.posts_list li a:hover .post_item_btn {
+  background: #d92d2b;
+  border-color: #d92d2b;
+}
+
+.posts_list li .post_item_img {
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16 / 10;
+}
+
+.posts_list li .post_item_title {
+  margin-bottom: 0;
+}
+
+.posts_list li .post_item_desc {
+  flex: 1;
+  color: #626a73;
+}
+
+.posts_list li .post_item_btn {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 7px 15px;
+}
+
+/* заглушка до появления обложки статьи */
+.post_item_img .img_stub {
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+
+
+/* ---- Таблицы в контенте (wp-block-table) ----
+   Оформление строк — как у .tarifs_block_table: белый фон,
+   рамка #d9d9d9, скругление 10px. На mobile — карточки. */
+.single_service_content figure.wp-block-table {
+  overflow: visible;
+}
+
+.single_service_content .wp-block-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.single_service_content .wp-block-table th {
+  padding: 15px 20px;
+  background: rgba(217, 217, 217, .1);
+  border-bottom: 1px solid #d9d9d9;
+  color: #626a73;
+  font-weight: 400;
+  vertical-align: bottom;
+}
+
+.single_service_content .wp-block-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #212a33;
+  vertical-align: top;
+}
+
+.single_service_content .wp-block-table tr:last-child td {
+  border-bottom: none;
+}
+
+.single_service_content .wp-block-table td:first-child {
+  font-weight: 500;
+}
+
+
+/* ---- Форма заявки: дополнительные поля ----
+   Поля — как input[type=text] в .leave_request_form */
+.leave_request_form_row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 12px;
+}
+
+.leave_request_form .leave_request_form_row .leave_request_form_item {
+  margin-bottom: 0;
+}
+
+/* в форме CF7 сайта отступ между полями задаёт gap: 12px */
+.leave_request_form .wpcf7-form .leave_request_form_item {
+  margin-bottom: 0;
+}
+
+.leave_request_form_label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #626a73;
+}
+
+.leave_request_form .leave_request_form_item input[type=email],
+.leave_request_form .leave_request_form_item input[type=number],
+.leave_request_form .leave_request_form_item input[type=date],
+.leave_request_form .leave_request_form_item select,
+.leave_request_form .leave_request_form_item textarea {
+  width: 100%;
+  padding: 12px;
+  border: solid 1px #d92d2b;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  color: #1a1a1a;
+}
+
+.leave_request_form .leave_request_form_item textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ---- Иконки в полях: шеврон у select, календарь у даты ----
+   Иконки — assets/svg/icons/ (на сайте поправить путь под папку темы).
+   Отступ иконки от правого края — 16px, как в поле даты */
+.leave_request_form .leave_request_form_item select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 48px;
+  background: #fff url("../assets/svg/icons/icon-chevron-down.svg") no-repeat right 16px center / 20px 20px;
+  cursor: pointer;
+}
+
+.leave_request_form .leave_request_form_item .chz_date input {
+  padding-right: 48px;
+  background: #fff url("../assets/svg/icons/icon-calendar.svg") no-repeat right 16px center / 20px 20px;
+}
+
+
+/* ---- Модальное окно расчета: шире стандартного .callback_popup (640px) ---- */
+#chz-popup.callback_popup {
+  width: 880px;
+  max-width: 100%;
+}
+
+
+/* ---- Выпадающие панели: календарь и списки (единый стиль) ----
+   Выпадают под полем с отступом 6px. Цвета, рамка, скругление и тень —
+   из CSS сайта: #d9d9d9 / radius 10px / тень выпадающего меню шапки */
+.chz_date,
+.chz_select {
+  position: relative;
+  display: block;
+}
+
+.chz_datepicker,
+.chz_listbox {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(29, 46, 61, .2);
+  font-family: inherit;
+}
+
+.chz_datepicker[hidden],
+.chz_listbox[hidden] {
+  display: none;
+}
+
+/* открытие вверх, если снизу не хватает места на экране */
+.chz_datepicker.is-up,
+.chz_listbox.is-up {
+  top: auto;
+  bottom: calc(100% + 6px);
+}
+
+.chz_datepicker {
+  width: 372px;
+  max-width: 100%;
+  padding: 16px;
+}
+
+
+/* ---- Выпадающий список вместо нативного select ----
+   Нативный <select> остаётся в форме (отправка, CF7), но скрыт;
+   без JS виден обычный select со стилями выше */
+.chz_select.is-enhanced select {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  opacity: 0;
+}
+
+.chz_select_btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 12px 48px 12px 12px;
+  border: solid 1px #d92d2b;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  color: #1a1a1a;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* пока ничего не выбрано — текст как у плейсхолдера */
+.chz_select_btn.is-placeholder {
+  color: #757575;
+}
+
+.chz_select_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background: url("../assets/svg/icons/icon-chevron-down.svg") no-repeat center / contain;
+  transition: transform .2s ease;
+}
+
+.chz_select_btn[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.chz_select_btn:focus-visible {
+  outline: 2px solid #d92d2b;
+  outline-offset: 1px;
+}
+
+.chz_listbox {
+  right: 0;
+  max-height: 264px;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.chz_listbox_option {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.chz_listbox_option + .chz_listbox_option {
+  margin-top: 4px;
+}
+
+.chz_listbox_option:hover,
+.chz_listbox_option.is-active {
+  background: #ebedf2;
+}
+
+.chz_listbox_option[aria-selected="true"] {
+  background: #d92d2b;
+  color: #fff;
+}
+
+.chz_datepicker_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.chz_datepicker_title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.chz_datepicker_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background-color .2s ease;
+}
+
+.chz_datepicker_nav::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("../assets/svg/icons/icon-chevron-down.svg") no-repeat center / contain;
+  transform: rotate(90deg);
+}
+
+.chz_datepicker_nav[data-step="1"]::before {
+  transform: rotate(-90deg);
+}
+
+.chz_datepicker_nav:hover:not(:disabled) {
+  background: #ebedf2;
+}
+
+.chz_datepicker_nav:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.chz_datepicker_grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.chz_datepicker_weekday {
+  padding: 6px 0;
+  font-size: 13px;
+  color: #626a73;
+  text-align: center;
+}
+
+.chz_datepicker_day {
+  height: 44px;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 16px;
+  color: #1a1a1a;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.chz_datepicker_day:hover:not(:disabled) {
+  background: #ebedf2;
+}
+
+.chz_datepicker_day.is-today {
+  box-shadow: inset 0 0 0 1px #d92d2b;
+}
+
+.chz_datepicker_day.is-selected,
+.chz_datepicker_day.is-selected:hover {
+  background: #d92d2b;
+  color: #fff;
+}
+
+.chz_datepicker_day:disabled {
+  color: #bdc2c7;
+  cursor: default;
+}
+
+.chz_datepicker_day:focus-visible,
+.chz_datepicker_nav:focus-visible {
+  outline: 2px solid #d92d2b;
+  outline-offset: 1px;
+}
+
+.leave_request_form .leave_request_form_item select:focus,
+.leave_request_form .leave_request_form_item textarea:focus,
+.leave_request_form .leave_request_form_item input:focus {
+  outline: none;
+}
+
+.leave_request_form_success {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.leave_request_form_success[hidden] {
+  display: none;
+}
+
+/* ---- Рамка с кнопками (первый экран и финальный CTA) ----
+   Рамка — компонент встроенной формы .leave_request_single_service
+   (padding 30px, рамка #d9d9d9, радиус 10px), без поля ввода */
+.single_service_content .chz_cta_box {
+  margin: 35px 0;
+}
+
+.chz_cta_box .chz_cta {
+  margin-top: 0;
+}
+
+/* кнопки растянуты на всю ширину рамки */
+.chz_cta_box .chz_cta .btn {
+  flex: 1 1 0;
+  max-width: none;
+}
+
+.single_service_content .chz_cta_box p.chz_cta_note {
+  margin: 15px 0 0;
+}
+
+/* финальный CTA: заголовок и текст внутри рамки */
+.single_service_content .chz_final {
+  margin-top: 0;
+}
+
+.single_service_content .chz_final h2 {
+  margin-top: 0;
+}
+
+.single_service_content .chz_final p {
+  margin: 0;
+}
+
+.chz_final .chz_cta {
+  margin-top: 25px;
+}
+
+
+/* ---- Адаптив ---- */
+@media (max-width: 640px) {
+  /* карточки статей — как в blog.css */
+  .posts li {
+    flex: 1 0 calc((100% - 30px) / 2);
+    max-width: calc((100% - 30px) / 2);
+  }
+
+  /* кнопки друг под другом на всю ширину: основная сверху, вторая под ней */
+  .chz_cta {
+    flex-direction: column;
+  }
+
+  .chz_cta .btn,
+  .chz_cta_box .chz_cta .btn {
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .single_service_content .container > h3,
+  .single_service_content p.chz_step {
+    margin-top: 25px;
+  }
+
+  /* таблицы → карточки: подпись столбца из data-label */
+  .single_service_content .wp-block-table table,
+  .single_service_content .wp-block-table tbody,
+  .single_service_content .wp-block-table tr,
+  .single_service_content .wp-block-table td {
+    display: block;
+  }
+
+  .single_service_content .wp-block-table table {
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+  }
+
+  .single_service_content .wp-block-table thead {
+    display: none;
+  }
+
+  .single_service_content .wp-block-table tr {
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .single_service_content .wp-block-table tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .single_service_content .wp-block-table td {
+    padding: 0;
+    border: none;
+  }
+
+  .single_service_content .wp-block-table td + td {
+    margin-top: 10px;
+  }
+
+  .single_service_content .wp-block-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #626a73;
+  }
+
+  .single_service_content .wp-block-table td:first-child::before {
+    display: none;
+  }
+
+  .single_service_content .wp-block-table td:first-child {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .leave_request_form_row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* карточки статей — как в blog.css */
+  .posts li {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}

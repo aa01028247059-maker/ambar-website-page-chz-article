@@ -1,0 +1,5 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Временная иконка календаря (заменить иконкой из дизайн-системы с тем же именем файла) -->
+<rect x="3.5" y="5" width="17" height="15.5" rx="3" stroke="black"/>
+<path d="M3.5 9.5H20.5M8 3V6.5M16 3V6.5" stroke="black" stroke-linecap="round"/>
+</svg>
