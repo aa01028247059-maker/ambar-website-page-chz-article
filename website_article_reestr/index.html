@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO (на сайте заполняется в Yoast) -->
+  <title>Реестр кодов Data Matrix при отгрузке: порядок работы</title>
+  <meta name="description" content="Какие данные передать складу, как проходит сканирование Data Matrix и что входит в реестр кодов по конкретному заказу на отгрузку.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Как получить реестр кодов Data Matrix при отгрузке со склада">
+  <meta property="og:description" content="Какие данные передать складу, как проходит сканирование Data Matrix и что входит в реестр кодов по конкретному заказу на отгрузку.">
+  <meta property="og:url" content="https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/">
+  <meta property="og:site_name" content="Склад хранения вещей Амбар">
+  <!-- TODO: заменить на обложку статьи -->
+  <meta property="og:image" content="https://ambar-sklad.ru/wp-content/uploads/2026/06/ambar-sklad-vremennoe-hranenie-veshchey-moskva.png?v=1782225296">
+  <meta property="article:published_time" content="2026-10-26T00:00:00+03:00">
+  <meta property="article:modified_time" content="2026-10-26T00:00:00+03:00">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Только для прототипа: шрифт с сайта не загружается локально из-за CORS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Только для прототипа: копия CSS шаблона статей -->
+  <link rel="stylesheet" href="css/site/blog.css">
+  <!-- Переносится на сайт -->
+  <link rel="stylesheet" href="css/article.css">
+  <!-- Только для прототипа -->
+  <link rel="stylesheet" href="css/prototype.css">
+
+  <!-- Структурированные данные (ТЗ, раздел 9): Article + HowTo (видимая пошаговая инструкция есть) +
+       BreadcrumbList + FAQPage. FAQ и шаги HowTo совпадают с видимым текстом дословно. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/#article",
+        "headline": "Как получить реестр кодов Data Matrix при отгрузке со склада",
+        "description": "Какие данные передать складу, как проходит сканирование Data Matrix и что входит в реестр кодов по конкретному заказу на отгрузку.",
+        "inLanguage": "ru-RU",
+        "datePublished": "2026-10-26",
+        "dateModified": "2026-10-26",
+        "mainEntityOfPage": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/",
+        "author": {
+          "@type": "Person",
+          "@id": "https://ambar-sklad.ru/#/schema/person/2984122d0f994942e5a09d656ea8d237",
+          "name": "Команда Амбар"
+        },
+        "publisher": {
+          "@id": "https://ambar-sklad.ru/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://ambar-sklad.ru/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/#breadcrumb"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Реестр кодов Data Matrix"
+          },
+          {
+            "@type": "Thing",
+            "name": "Отгрузка маркированного груза"
+          }
+        ],
+        "mentions": [
+          {
+            "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#service",
+            "@type": "Service",
+            "name": "Фиксация кодов «Честный ЗНАК» при отгрузке груза",
+            "url": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/#howto",
+        "name": "Как получить реестр кодов Data Matrix при отгрузке со склада",
+        "inLanguage": "ru-RU",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "text": "Подготовьте данные об\u00a0отгрузке: номера ГРМ, предполагаемое количество кодов, расположение этикеток и\u00a0требования к\u00a0реестру"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "text": "Выберите нужные ГРМ в\u00a0личном кабинете и\u00a0создайте заявку на\u00a0выдачу или\u00a0доставку"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "text": "Добавьте к\u00a0заявке сканирование кодов «Честный\u00a0ЗНАК» и\u00a0укажите формат реестра и\u00a0особые требования к\u00a0обработке"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "text": "Согласуйте вскрытие упаковки, если коды находятся внутри короба или\u00a0под\u00a0транспортной упаковкой"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "text": "Склад сканирует доступные коды Data\u00a0Matrix терминалом сбора данных и\u00a0фиксирует каждый код в\u00a0составе заказа"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 6,
+            "text": "Получите реестр фактически отсканированных кодов и\u00a0используйте его\u00a0в\u00a0своей учетной системе, ЭДО или\u00a0ГИС\u00a0МТ"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://ambar-sklad.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Блог",
+            "item": "https://ambar-sklad.ru/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Как получить реестр кодов Data Matrix при отгрузке со склада",
+            "item": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ambar-sklad.ru/kak-poluchit-reestr-kodov-data-matrix-pri-otgruzke/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0заказать сканирование только при\u00a0одной отгрузке?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Услугу можно подключить к\u00a0отдельной заявке на\u00a0выдачу или\u00a0доставку груза"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что\u00a0нужно указать в\u00a0заявке?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Укажите номера ГРМ, предполагаемое количество кодов, расположение этикеток, разрешение на\u00a0вскрытие, формат реестра и\u00a0порядок действий при\u00a0расхождениях"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно\u00a0ли\u00a0вскрывать коробки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Если Data\u00a0Matrix находится внутри короба, потребуется согласовать вскрытие транспортной упаковки и\u00a0последующую переупаковку. Если коды доступны снаружи, вскрытие не\u00a0требуется"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "В\u00a0каком формате передается реестр?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Базовый реестр передается в\u00a0XLSX. Возможность передачи XML указывается только после технического подтверждения"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Передает\u00a0ли\u00a0«АМБАР» реестр напрямую в\u00a0ГИС\u00a0МТ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. В\u00a0стандартной услуге склад передает реестр поклажедателю. Загрузка сведений в\u00a0учетную систему, ЭДО или\u00a0ГИС\u00a0МТ\u00a0выполняется поклажедателем самостоятельно"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Формирует\u00a0ли\u00a0склад УПД с\u00a0кодами маркировки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Формирование, подписание и\u00a0отправка УПД не\u00a0входят в\u00a0стандартную услугу сканирования на\u00a0выходе"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<main class="single-post-page">
+  <article class="single-post">
+    <div class="container">
+
+      <!-- Хлебные крошки -->
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="Главная" />
+            <a itemprop="item" href="https://ambar-sklad.ru/" aria-label="Главная"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.666 15.8337V8.33366C16.666 8.06977 16.6068 7.81977 16.4885 7.58366C16.3702 7.34755 16.2071 7.1531 15.9993 7.00033L10.9993 3.25033C10.7077 3.0281 10.3743 2.91699 9.99935 2.91699C9.62435 2.91699 9.29102 3.0281 8.99935 3.25033L3.99935 7.00033C3.79102 7.1531 3.62768 7.34755 3.50935 7.58366C3.39102 7.81977 3.33213 8.06977 3.33268 8.33366V15.8337C3.33268 16.292 3.49602 16.6845 3.82268 17.0112C4.14935 17.3378 4.54157 17.5009 4.99935 17.5003H7.49935C7.73546 17.5003 7.93324 17.4203 8.09268 17.2603C8.25213 17.1003 8.33213 16.9025 8.33268 16.667V12.5003C8.33268 12.2642 8.41268 12.0664 8.57268 11.907C8.73268 11.7475 8.93046 11.6675 9.16602 11.667H10.8327C11.0688 11.667 11.2666 11.747 11.426 11.907C11.5855 12.067 11.6655 12.2648 11.666 12.5003V16.667C11.666 16.9031 11.746 17.1012 11.906 17.2612C12.066 17.4212 12.2638 17.5009 12.4993 17.5003H14.9993C15.4577 17.5003 15.8499 17.3373 16.176 17.0112C16.5021 16.685 16.6655 16.2925 16.666 15.8337Z" fill="#767676" /></svg></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="Блог" />
+            <a itemprop="item" href="https://ambar-sklad.ru/blog/">Блог</a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="Как получить реестр кодов Data Matrix при отгрузке со склада" />
+            <span aria-current="page">Как&nbsp;получить реестр кодов Data&nbsp;Matrix при&nbsp;отгрузке со&nbsp;склада</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Обложка + H1 -->
+      <header class="entry-header">
+        <figure class="single-post_img">
+          <!-- На сайте — миниатюра записи (featured image): шаблон выводит её здесь и в карточках статьи -->
+          <picture>
+            <source srcset="assets/images/cover.webp" type="image/webp">
+            <img src="assets/images/cover.jpg" alt="Сотрудник склада сканирует коды Data Matrix при подготовке отгрузки" width="1536" height="1024" decoding="async" fetchpriority="high">
+          </picture>
+        </figure>
+        <h1 class="entry-title">Как&nbsp;получить реестр кодов Data&nbsp;Matrix при&nbsp;отгрузке со&nbsp;склада</h1>
+      </header>
+
+      <div class="entry-content">
+
+        <!-- Основной ответ -->
+        <p><strong>Реестр кодов Data&nbsp;Matrix&nbsp;— это&nbsp;перечень кодов, фактически отсканированных складом при&nbsp;подготовке конкретного заказа на&nbsp;отгрузку.</strong> Чтобы его&nbsp;получить, поклажедатель создает в&nbsp;личном кабинете заявку на&nbsp;выдачу груза и&nbsp;подключает к&nbsp;ней сканирование&nbsp;— можно сразу <a href="../website_page_chz/index.html">заказать фиксацию кодов «Честный&nbsp;ЗНАК»</a> для&nbsp;нужной отгрузки</p>
+        <!-- Определение термина после первого упоминания -->
+        <blockquote>
+          <p><strong>Поклажедатель</strong>&nbsp;— организация, индивидуальный предприниматель или&nbsp;физическое лицо, передающие товар на&nbsp;склад для&nbsp;хранения и&nbsp;складской обработки</p>
+        </blockquote>
+        <p>Порядок работы в&nbsp;шести шагах:</p>
+        <!-- Видимая пошаговая инструкция — основа разметки HowTo -->
+        <ol>
+          <li>Подготовьте данные об&nbsp;отгрузке: номера ГРМ, предполагаемое количество кодов, расположение этикеток и&nbsp;требования к&nbsp;реестру</li>
+          <li>Выберите нужные ГРМ в&nbsp;личном кабинете и&nbsp;создайте заявку на&nbsp;выдачу или&nbsp;доставку</li>
+          <li>Добавьте к&nbsp;заявке сканирование кодов «Честный&nbsp;ЗНАК» и&nbsp;укажите формат реестра и&nbsp;особые требования к&nbsp;обработке</li>
+          <li>Согласуйте вскрытие упаковки, если коды находятся внутри короба или&nbsp;под&nbsp;транспортной упаковкой</li>
+          <li>Склад сканирует доступные коды Data&nbsp;Matrix терминалом сбора данных и&nbsp;фиксирует каждый код в&nbsp;составе заказа</li>
+          <li>Получите реестр фактически отсканированных кодов и&nbsp;используйте его&nbsp;в&nbsp;своей учетной системе, ЭДО или&nbsp;ГИС&nbsp;МТ</li>
+        </ol>
+        <p>Сканирование выполняется только на&nbsp;выходе груза со&nbsp;склада, а&nbsp;до&nbsp;этого учет ведется по&nbsp;грузовым местам. Так&nbsp;устроено <a href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/">хранение грузов с&nbsp;удаленным управлением</a> в&nbsp;«АМБАР»: нужные места выбирают и&nbsp;заказывают через личный кабинет, без&nbsp;визита на&nbsp;склад. Ниже&nbsp;— подробно о&nbsp;каждом шаге</p>
+
+        <!-- 1 -->
+        <h2>Для&nbsp;чего требуется реестр</h2>
+        <p>При&nbsp;приемке склад учитывает груз по&nbsp;грузовым местам: каждой коробке или&nbsp;паллете присваивается номер ГРМ, выполняются замер и&nbsp;фотофиксация. Коды Data&nbsp;Matrix на&nbsp;товарах внутри закрытых мест при&nbsp;этом не&nbsp;сканируются. Поэтому, когда маркированный товар уходит со&nbsp;склада, перечень его&nbsp;кодов можно получить только отдельным сканированием на&nbsp;выходе</p>
+        <p>Реестр нужен, если:</p>
+        <ul>
+          <li>требуется знать, какие экземпляры фактически вошли в&nbsp;конкретную отгрузку;</li>
+          <li>перечень кодов нужен бухгалтерии или&nbsp;оператору ЭДО для&nbsp;оформления документов;</li>
+          <li>в&nbsp;одной заявке несколько ГРМ, и&nbsp;коды нужно связать с&nbsp;заказом и&nbsp;грузовыми местами;</li>
+          <li>важно избежать ручного переписывания кодов</li>
+        </ul>
+
+        <!-- 2 -->
+        <h2>Какие данные подготовить до&nbsp;создания заявки</h2>
+        <p>Чем полнее задание, тем меньше вопросов при&nbsp;обработке. Перед заказом услуги подготовьте:</p>
+        <ul>
+          <li>номера ГРМ, включенные в&nbsp;отгрузку;</li>
+          <li>предполагаемое количество кодов;</li>
+          <li>расположение Data&nbsp;Matrix: снаружи или&nbsp;внутри упаковки;</li>
+          <li>разрешение на&nbsp;вскрытие транспортной упаковки;</li>
+          <li>требование к&nbsp;повторной упаковке;</li>
+          <li>нужна&nbsp;ли&nbsp;связь каждого кода с&nbsp;конкретным ГРМ;</li>
+          <li>требуемый формат реестра;</li>
+          <li>срок подготовки заказа;</li>
+          <li>сценарий действий при&nbsp;нечитаемом или&nbsp;отсутствующем коде;</li>
+          <li>контактное лицо для&nbsp;согласования расхождений</li>
+        </ul>
+        <p>Подробный чек-лист с&nbsp;пояснениями к&nbsp;каждому пункту&nbsp;— в&nbsp;материале о&nbsp;том, <a href="../website_article_podgotovka/index.html">что&nbsp;подготовить владельцу груза перед отгрузкой</a></p>
+
+        <!-- 3 -->
+        <h2>Как&nbsp;выбрать ГРМ в&nbsp;личном кабинете</h2>
+        <p>Все&nbsp;грузовые места поклажедателя отображаются в <a href="https://newlk.ambar-sklad.ru/login">личном кабинете склада</a>&nbsp;— с&nbsp;номером ГРМ и&nbsp;фотографией, сделанной при&nbsp;приемке. По&nbsp;фото удобно узнать нужную коробку или&nbsp;паллету, не&nbsp;приезжая на&nbsp;склад</p>
+        <p>Дальше поклажедатель отмечает ГРМ, которые нужно выдать, доставить получателю или&nbsp;направить на&nbsp;другой склад, и&nbsp;создает заявку. В&nbsp;заявке указывается необходимость сканирования кодов «Честный&nbsp;ЗНАК», требуемый формат реестра и&nbsp;особые требования к&nbsp;обработке</p>
+
+        <!-- 4 -->
+        <h2>Когда требуется вскрытие упаковки</h2>
+        <p>Все&nbsp;зависит от&nbsp;того, где&nbsp;находятся коды. Если Data&nbsp;Matrix доступны снаружи, вскрытие не&nbsp;требуется. Если коды находятся внутри короба или&nbsp;под&nbsp;транспортной упаковкой, доступ к&nbsp;ним обеспечивается только по&nbsp;согласованному заданию поклажедателя</p>
+        <p>В&nbsp;этом случае в&nbsp;заявке стоит сразу указать разрешение на&nbsp;вскрытие и&nbsp;требования к&nbsp;повторной упаковке. Переупаковка выполняется, если услуга упаковки добавлена к&nbsp;заявке и&nbsp;заранее согласованы упаковочные материалы и&nbsp;требования к&nbsp;грузу</p>
+
+        <!-- 5 -->
+        <h2>Как&nbsp;выполняется сканирование ТСД</h2>
+        <p>Коды считываются терминалом сбора данных (ТСД) и&nbsp;сохраняются в&nbsp;системе без&nbsp;ручного набора символьной последовательности. Обработка заказа идет в&nbsp;таком порядке:</p>
+        <ol>
+          <li>Сотрудник склада находит выбранные ГРМ и&nbsp;перемещает их&nbsp;в&nbsp;зону обработки заказа</li>
+          <li>Если это&nbsp;согласовано, открывает доступ к&nbsp;кодам</li>
+          <li>Считывает доступные Data&nbsp;Matrix терминалом сбора данных. Каждый считанный код фиксируется в&nbsp;составе конкретного заказа</li>
+          <li>Повторное сканирование одного и&nbsp;того&nbsp;же&nbsp;кода фиксируется и&nbsp;не&nbsp;добавляется как&nbsp;новая единица</li>
+          <li>После завершения операции система формирует перечень фактически отсканированных кодов с&nbsp;привязкой к&nbsp;заказу и&nbsp;ГРМ</li>
+        </ol>
+        <p>Чтобы коды были связаны с&nbsp;конкретными грузовыми местами, их&nbsp;сканируют последовательно по&nbsp;отдельным ГРМ&nbsp;— такое требование нужно указать в&nbsp;заявке</p>
+
+        <!-- 6 -->
+        <h2>Какие поля содержит реестр</h2>
+        <p>Реестр передается в&nbsp;формате XLSX. В&nbsp;нем отражается результат складской обработки заказа:</p>
+        <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th>Данные</th><th>Что&nbsp;содержат</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Коды Data&nbsp;Matrix</td><td>Коды, которые были фактически отсканированы при&nbsp;обработке заказа</td></tr>
+            <tr><td>Номер заказа</td><td>Номер заявки или&nbsp;заказа на&nbsp;отгрузку</td></tr>
+            <tr><td>Номера ГРМ</td><td>Грузовые места, из&nbsp;которых считаны коды,&nbsp;— если процесс обработки позволяет установить такую связь</td></tr>
+            <tr><td>Результат обработки</td><td>Отдельно отмеченные успешно считанные, повторные и&nbsp;нечитаемые коды</td></tr>
+          </tbody>
+        </table>
+        </figure>
+        <p>Артикул и&nbsp;наименование товара склад не&nbsp;определяет, если эти данные не&nbsp;были отдельно предоставлены поклажедателем</p>
+        <figure class="wp-block-image size-large">
+          <picture>
+            <source srcset="assets/images/photo-reestr.webp" type="image/webp">
+            <img src="assets/images/photo-reestr.jpg" alt="Реестр кодов Data Matrix по заказу на отгрузку" width="1200" height="800" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <!-- 7 -->
+        <h2>Что&nbsp;делать с&nbsp;нечитаемыми и&nbsp;отсутствующими кодами</h2>
+        <p>При&nbsp;обработке могут обнаружиться проблемные этикетки. Каждая ситуация фиксируется, а&nbsp;дальнейшие действия выполняются по&nbsp;согласованному заданию:</p>
+        <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th>Ситуация</th><th>Действие склада</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Код не&nbsp;считывается</td><td>Информация передается ответственному сотруднику и&nbsp;поклажедателю</td></tr>
+            <tr><td>Этикетка отсутствует</td><td>Единица фиксируется как&nbsp;не&nbsp;имеющая доступного кода</td></tr>
+            <tr><td>Этикетка повреждена</td><td>Результат указывается в&nbsp;отчете по&nbsp;обработке</td></tr>
+            <tr><td>Код закрыт упаковкой</td><td>Требуется разрешение на&nbsp;вскрытие или&nbsp;изменение упаковки</td></tr>
+            <tr><td>Количество считанных кодов не&nbsp;совпадает с&nbsp;заданием</td><td>Отгрузка обрабатывается по&nbsp;согласованному сценарию</td></tr>
+          </tbody>
+        </table>
+        </figure>
+        <p>Чтобы не&nbsp;останавливать отгрузку, сценарий действий при&nbsp;нечитаемом или&nbsp;отсутствующем коде и&nbsp;контактное лицо для&nbsp;согласования расхождений лучше указать в&nbsp;заявке заранее</p>
+
+        <!-- 8 -->
+        <h2>Чем реестр склада отличается от&nbsp;УПД</h2>
+        <p>Реестр и&nbsp;УПД решают разные задачи, и&nbsp;один документ не&nbsp;заменяет другой</p>
+        <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th>Параметр</th><th>Реестр склада</th><th>УПД</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Что&nbsp;это</td><td>Результат складского сканирования: перечень кодов, считанных в&nbsp;рамках заказа</td><td>Электронный документ о&nbsp;передаче товара между участниками оборота</td></tr>
+            <tr><td>Кто формирует</td><td>Склад «АМБАР» по&nbsp;итогам обработки заказа</td><td>Поклажедатель в&nbsp;своей учетной системе</td></tr>
+            <tr><td>Как&nbsp;передается</td><td>Файл передается поклажедателю</td><td>Подписывается и&nbsp;отправляется через ЭДО</td></tr>
+            <tr><td>Статус кодов в&nbsp;ГИС&nbsp;МТ</td><td>Сам по&nbsp;себе не&nbsp;изменяет</td><td>Сведения о&nbsp;передаче кодов обрабатываются через ЭДО и&nbsp;ГИС&nbsp;МТ</td></tr>
+          </tbody>
+        </table>
+        </figure>
+        <blockquote>
+          <p>Формирование, подписание и&nbsp;отправка УПД, а&nbsp;также передача сведений в&nbsp;«Честный&nbsp;ЗНАК» не&nbsp;входят в&nbsp;стандартную услугу склада. Складской файл с&nbsp;перечнем кодов не&nbsp;заменяет электронный документооборот</p>
+        </blockquote>
+
+        <!-- 9 -->
+        <h2>Как&nbsp;поклажедатель использует файл дальше</h2>
+        <p>Реестр передается поклажедателю для&nbsp;дальнейшей работы в&nbsp;его&nbsp;учетной системе, ЭДО или&nbsp;личном кабинете «Честного&nbsp;ЗНАКа». Данные из&nbsp;файла можно загрузить в&nbsp;собственную учетную систему или&nbsp;обработать вручную&nbsp;— например, сверить с&nbsp;заказом покупателя или&nbsp;использовать при&nbsp;оформлении документов на&nbsp;отгрузку</p>
+        <p>Ответственность за&nbsp;дальнейшую загрузку реестра и&nbsp;оформление электронных документов остается у&nbsp;поклажедателя, если иное не&nbsp;предусмотрено отдельным соглашением. Остальные <a href="https://ambar-sklad.ru/">условия склада АМБАР</a>&nbsp;— хранение, доставка и&nbsp;тарифы&nbsp;— описаны на&nbsp;сайте</p>
+
+        <!-- 10 -->
+        <h2>Частые вопросы</h2>
+        <h3>Можно&nbsp;ли&nbsp;заказать сканирование только при&nbsp;одной отгрузке?</h3>
+        <p>Да. Услугу можно подключить к&nbsp;отдельной заявке на&nbsp;выдачу или&nbsp;доставку груза</p>
+        <h3>Что&nbsp;нужно указать в&nbsp;заявке?</h3>
+        <p>Укажите номера ГРМ, предполагаемое количество кодов, расположение этикеток, разрешение на&nbsp;вскрытие, формат реестра и&nbsp;порядок действий при&nbsp;расхождениях</p>
+        <h3>Нужно&nbsp;ли&nbsp;вскрывать коробки?</h3>
+        <p>Если Data&nbsp;Matrix находится внутри короба, потребуется согласовать вскрытие транспортной упаковки и&nbsp;последующую переупаковку. Если коды доступны снаружи, вскрытие не&nbsp;требуется</p>
+        <h3>В&nbsp;каком формате передается реестр?</h3>
+        <p>Базовый реестр передается в&nbsp;XLSX. Возможность передачи XML указывается только после технического подтверждения</p>
+        <h3>Передает&nbsp;ли&nbsp;«АМБАР» реестр напрямую в&nbsp;ГИС&nbsp;МТ?</h3>
+        <p>Нет. В&nbsp;стандартной услуге склад передает реестр поклажедателю. Загрузка сведений в&nbsp;учетную систему, ЭДО или&nbsp;ГИС&nbsp;МТ&nbsp;выполняется поклажедателем самостоятельно</p>
+        <h3>Формирует&nbsp;ли&nbsp;склад УПД с&nbsp;кодами маркировки?</h3>
+        <p>Нет. Формирование, подписание и&nbsp;отправка УПД не&nbsp;входят в&nbsp;стандартную услугу сканирования на&nbsp;выходе</p>
+
+        <!-- 11–12. CTA на услугу и на хранение груза (финальный блок с двумя кнопками, ТЗ раздел 10) -->
+        <h2>Получите реестр кодов по&nbsp;своей отгрузке</h2>
+        <blockquote class="article_cta_box">
+          <p>Если груз уже&nbsp;хранится в&nbsp;«АМБАР», подключите сканирование кодов к&nbsp;заявке на&nbsp;выдачу&nbsp;— менеджер проверит задание, рассчитает стоимость и&nbsp;согласует порядок обработки. Если груз пока не&nbsp;на&nbsp;складе, разместите его&nbsp;на&nbsp;ответственное хранение: каждому месту присвоят ГРМ и&nbsp;сделают фото в&nbsp;личном кабинете</p>
+          <div class="article_cta">
+            <a class="btn" href="../website_page_chz/index.html">Заказать сканирование</a>
+            <a class="btn btn_grey" href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/">Разместить груз на&nbsp;хранение</a>
+          </div>
+        </blockquote>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+<!-- Только для превью: возврат к списку страниц -->
+<a href="../index.html" style="position:fixed;top:12px;right:12px;z-index:10000;padding:8px 14px;border-radius:8px;background:#212A33;color:#fff;font:600 14px/20px Manrope,system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.18)">← Все страницы</a>
+</body>
+</html>

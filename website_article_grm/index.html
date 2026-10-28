@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO (на сайте заполняется в Yoast) -->
+  <title>Чем ГРМ отличается от Data Matrix | Склад АМБАР</title>
+  <meta name="description" content="ГРМ идентифицирует коробку или паллету на складе, а Data Matrix — маркированную единицу товара. Разбираем, как эти коды работают при отгрузке.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ГРМ и Data Matrix: два уровня учета груза на складе">
+  <meta property="og:description" content="ГРМ идентифицирует коробку или паллету на складе, а Data Matrix — маркированную единицу товара. Разбираем, как эти коды работают при отгрузке.">
+  <meta property="og:url" content="https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/">
+  <meta property="og:site_name" content="Склад хранения вещей Амбар">
+  <!-- TODO: заменить на обложку статьи -->
+  <meta property="og:image" content="https://ambar-sklad.ru/wp-content/uploads/2026/06/ambar-sklad-vremennoe-hranenie-veshchey-moskva.png?v=1782225296">
+  <meta property="article:published_time" content="2026-10-26T00:00:00+03:00">
+  <meta property="article:modified_time" content="2026-10-26T00:00:00+03:00">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Только для прототипа: шрифт с сайта не загружается локально из-за CORS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Только для прототипа: копия CSS шаблона статей -->
+  <link rel="stylesheet" href="css/site/blog.css">
+  <!-- Переносится на сайт -->
+  <link rel="stylesheet" href="css/article.css">
+  <!-- Только для прототипа -->
+  <link rel="stylesheet" href="css/prototype.css">
+
+  <!-- Структурированные данные (ТЗ, раздел 9): Article + BreadcrumbList + FAQPage, about, mentions.
+       FAQ совпадает с видимым текстом статьи дословно. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/#article",
+        "headline": "ГРМ и Data Matrix: два уровня учета груза на складе",
+        "description": "ГРМ идентифицирует коробку или паллету на складе, а Data Matrix — маркированную единицу товара. Разбираем, как эти коды работают при отгрузке.",
+        "inLanguage": "ru-RU",
+        "datePublished": "2026-10-26",
+        "dateModified": "2026-10-26",
+        "mainEntityOfPage": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/",
+        "author": {
+          "@type": "Person",
+          "@id": "https://ambar-sklad.ru/#/schema/person/2984122d0f994942e5a09d656ea8d237",
+          "name": "Команда Амбар"
+        },
+        "publisher": {
+          "@id": "https://ambar-sklad.ru/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://ambar-sklad.ru/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/#breadcrumb"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "ГРМ",
+            "description": "Идентификатор грузового места"
+          },
+          {
+            "@type": "Thing",
+            "name": "Data Matrix",
+            "description": "Код отдельной маркированной единицы"
+          },
+          {
+            "@type": "Thing",
+            "name": "Складской учет"
+          }
+        ],
+        "mentions": [
+          {
+            "@id": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/#service",
+            "@type": "Service",
+            "name": "Фиксация кодов «Честный ЗНАК» при отгрузке груза",
+            "url": "https://ambar-sklad.ru/uslugi/fiksaciya-kodov-chestnyj-znak-pri-otgruzke/"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://ambar-sklad.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Блог",
+            "item": "https://ambar-sklad.ru/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "ГРМ и Data Matrix: два уровня учета груза на складе",
+            "item": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ambar-sklad.ru/grm-i-data-matrix-dva-urovnya-ucheta-gruza/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Является\u00a0ли\u00a0ГРМ кодом «Честного\u00a0ЗНАКа»?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. ГРМ\u00a0— внутренний идентификатор грузового места на\u00a0складе «АМБАР». Он\u00a0не\u00a0относится к\u00a0системе маркировки и\u00a0не\u00a0заменяет коды Data\u00a0Matrix на\u00a0товаре"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сканирует\u00a0ли\u00a0«АМБАР» коды при\u00a0приемке груза?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. При\u00a0обычной приемке склад учитывает грузовые места по\u00a0номерам ГРМ, выполняет замер и\u00a0фотофиксацию. Data\u00a0Matrix сканируется только на\u00a0выходе, если услуга добавлена к\u00a0заявке на\u00a0отгрузку"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько кодов Data\u00a0Matrix может быть в\u00a0одном ГРМ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Столько, сколько маркированных единиц находится в\u00a0грузовом месте. При\u00a0приемке склад их\u00a0не\u00a0пересчитывает: перечень кодов появляется только после сканирования на\u00a0выходе"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0связать каждый код с\u00a0конкретным ГРМ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, если коды сканируются последовательно по\u00a0отдельным грузовым местам и\u00a0такое требование указано в\u00a0заявке"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0отсканировать код короба или\u00a0паллеты вместо каждой единицы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Это\u00a0возможно только при\u00a0наличии корректного агрегированного кода и\u00a0заранее согласованного процесса. Стандартный сценарий предусматривает сканирование доступных Data\u00a0Matrix отдельных единиц"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно\u00a0ли\u00a0проверить, находится\u00a0ли\u00a0код в\u00a0обороте?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Стандартная услуга не\u00a0включает онлайн-проверку статуса кода в\u00a0ГИС\u00a0МТ. Склад фиксирует символьную последовательность, считанную с\u00a0этикетки"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<main class="single-post-page">
+  <article class="single-post">
+    <div class="container">
+
+      <!-- Хлебные крошки -->
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="Главная" />
+            <a itemprop="item" href="https://ambar-sklad.ru/" aria-label="Главная"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.666 15.8337V8.33366C16.666 8.06977 16.6068 7.81977 16.4885 7.58366C16.3702 7.34755 16.2071 7.1531 15.9993 7.00033L10.9993 3.25033C10.7077 3.0281 10.3743 2.91699 9.99935 2.91699C9.62435 2.91699 9.29102 3.0281 8.99935 3.25033L3.99935 7.00033C3.79102 7.1531 3.62768 7.34755 3.50935 7.58366C3.39102 7.81977 3.33213 8.06977 3.33268 8.33366V15.8337C3.33268 16.292 3.49602 16.6845 3.82268 17.0112C4.14935 17.3378 4.54157 17.5009 4.99935 17.5003H7.49935C7.73546 17.5003 7.93324 17.4203 8.09268 17.2603C8.25213 17.1003 8.33213 16.9025 8.33268 16.667V12.5003C8.33268 12.2642 8.41268 12.0664 8.57268 11.907C8.73268 11.7475 8.93046 11.6675 9.16602 11.667H10.8327C11.0688 11.667 11.2666 11.747 11.426 11.907C11.5855 12.067 11.6655 12.2648 11.666 12.5003V16.667C11.666 16.9031 11.746 17.1012 11.906 17.2612C12.066 17.4212 12.2638 17.5009 12.4993 17.5003H14.9993C15.4577 17.5003 15.8499 17.3373 16.176 17.0112C16.5021 16.685 16.6655 16.2925 16.666 15.8337Z" fill="#767676" /></svg></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="Блог" />
+            <a itemprop="item" href="https://ambar-sklad.ru/blog/">Блог</a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <meta itemprop="name" content="ГРМ и Data Matrix: два уровня учета груза на складе" />
+            <span aria-current="page">ГРМ и&nbsp;Data&nbsp;Matrix: два уровня учета груза на&nbsp;складе</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Обложка + H1 -->
+      <header class="entry-header">
+        <figure class="single-post_img">
+          <!-- На сайте — миниатюра записи (featured image): шаблон выводит её здесь и в карточках статьи -->
+          <picture>
+            <source srcset="assets/images/cover.webp" type="image/webp">
+            <img src="assets/images/cover.jpg" alt="Грузовое место с номером ГРМ и маркированные товары с кодами Data Matrix" width="1536" height="1024" decoding="async" fetchpriority="high">
+          </picture>
+        </figure>
+        <h1 class="entry-title">ГРМ и&nbsp;Data&nbsp;Matrix: два уровня учета груза на&nbsp;складе</h1>
+      </header>
+
+      <div class="entry-content">
+
+        <!-- Основной ответ -->
+        <p><strong>ГРМ&nbsp;— идентификатор грузового места. Data&nbsp;Matrix&nbsp;— код отдельной маркированной единицы.</strong> На&nbsp;складе эти коды работают на&nbsp;разных уровнях: ГРМ сопровождает коробку или&nbsp;паллету от&nbsp;приемки до&nbsp;выдачи, а&nbsp;Data&nbsp;Matrix сканируется только на&nbsp;выходе груза со&nbsp;склада&nbsp;— если к&nbsp;заявке на&nbsp;отгрузку подключено <a href="../website_page_chz/index.html">сканирование кодов Data&nbsp;Matrix при&nbsp;отгрузке</a></p>
+        <p>Такое разделение позволяет принимать груз без&nbsp;вскрытия упаковки и&nbsp;при&nbsp;этом получать перечень кодов именно тогда, когда он&nbsp;нужен&nbsp;— перед передачей товара покупателю или&nbsp;перевозчику. На&nbsp;этом принципе построено <a href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/">ответственное хранение грузов для&nbsp;бизнеса</a> в&nbsp;«АМБАР»</p>
+
+        <!-- 1 -->
+        <h2>Что&nbsp;такое грузовое место</h2>
+        <p>Грузовое место&nbsp;— это&nbsp;отдельная единица груза, которую склад принимает, хранит и&nbsp;выдает целиком: коробка, паллета, мешок или&nbsp;другая упаковка. Внутри одного грузового места может лежать один предмет или&nbsp;много единиц товара</p>
+        <p>Склад работает с&nbsp;грузовым местом как&nbsp;с&nbsp;целым. Его&nbsp;замеряют, фотографируют и&nbsp;размещают на&nbsp;хранение, не&nbsp;разбирая содержимое по&nbsp;наименованиям и&nbsp;артикулам</p>
+
+        <!-- 2 -->
+        <h2>Что&nbsp;фиксирует ГРМ</h2>
+        <p>Каждому грузовому месту при&nbsp;приемке присваивается собственный номер&nbsp;— ГРМ. Вместе с&nbsp;ним склад фиксирует:</p>
+        <ul>
+          <li>объем грузового места&nbsp;— по&nbsp;результатам замера;</li>
+          <li>фотографию внешнего вида принятого места</li>
+        </ul>
+        <p>Номер ГРМ и&nbsp;фотография отображаются в&nbsp;личном кабинете. По&nbsp;ним поклажедатель узнает свой груз и&nbsp;выбирает, какие места выдать, доставить получателю или&nbsp;направить на&nbsp;другой склад. ГРМ используется на&nbsp;всех этапах: при&nbsp;приемке, хранении, поиске и&nbsp;выдаче груза</p>
+        <!-- Определение термина после первого упоминания (как на странице услуги) -->
+        <blockquote>
+          <p><strong>Поклажедатель</strong>&nbsp;— организация, индивидуальный предприниматель или&nbsp;физическое лицо, передающие товар на&nbsp;склад для&nbsp;хранения и&nbsp;складской обработки</p>
+        </blockquote>
+
+        <!-- 3 -->
+        <h2>Что&nbsp;идентифицирует Data&nbsp;Matrix</h2>
+        <p>Data&nbsp;Matrix&nbsp;— код отдельной маркированной единицы товара в&nbsp;системе маркировки «Честный&nbsp;ЗНАК». Код наносится на&nbsp;сам товар или&nbsp;его&nbsp;упаковку, поэтому в&nbsp;одной коробке могут оказаться десятки и&nbsp;сотни кодов</p>
+        <p>Терминал сбора данных считывает Data&nbsp;Matrix как&nbsp;символьную последовательность. Статус кода и&nbsp;сведения о&nbsp;товаре хранятся в&nbsp;государственной системе маркировки ГИС&nbsp;МТ, и&nbsp;проверяются они через саму систему, а&nbsp;не&nbsp;по&nbsp;изображению на&nbsp;этикетке</p>
+        <figure class="wp-block-table">
+        <table>
+          <thead>
+            <tr><th>Элемент</th><th>Что&nbsp;идентифицирует</th><th>Когда используется</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ГРМ</td><td>Коробку, паллету, мешок или&nbsp;другое грузовое место</td><td>При&nbsp;приемке, хранении, поиске и&nbsp;выдаче груза</td></tr>
+            <tr><td>Фотография ГРМ</td><td>Внешний вид принятого грузового места</td><td>Для&nbsp;идентификации груза поклажедателем в&nbsp;личном кабинете</td></tr>
+            <tr><td>Data&nbsp;Matrix</td><td>Отдельную маркированную единицу товара</td><td>При&nbsp;дополнительном сканировании в&nbsp;процессе отгрузки</td></tr>
+            <tr><td>Заказ на&nbsp;отгрузку</td><td>Конкретную операцию выдачи или&nbsp;доставки</td><td>Для&nbsp;объединения выбранных ГРМ и&nbsp;считанных кодов</td></tr>
+            <tr><td>Реестр кодов</td><td>Перечень кодов, считанных в&nbsp;рамках заказа</td><td>Для&nbsp;передачи поклажедателю после обработки</td></tr>
+          </tbody>
+        </table>
+        </figure>
+
+        <!-- 4 -->
+        <h2>Почему при&nbsp;обычной приемке «АМБАР» не&nbsp;сканирует содержимое закрытого короба</h2>
+        <p>Чтобы считать Data&nbsp;Matrix, нужен доступ к&nbsp;каждой маркированной единице. Для&nbsp;закрытого груза это&nbsp;означает вскрыть короб, достать товар, отсканировать коды и&nbsp;заново упаковать место. Такая обработка меняет упаковку поклажедателя и&nbsp;требует его&nbsp;отдельного согласия</p>
+        <p>Поэтому на <a href="https://ambar-sklad.ru/">склад АМБАР</a> груз принимается по&nbsp;грузовым местам. При&nbsp;обычной приемке склад не&nbsp;вскрывает упаковку и&nbsp;не&nbsp;определяет содержащиеся внутри наименования или&nbsp;артикулы. Каждому месту присваивается ГРМ, выполняются замер и&nbsp;фотофиксация</p>
+        <blockquote>
+          <p>При&nbsp;приемке коды Data&nbsp;Matrix не&nbsp;сканируются, и&nbsp;поэкземплярный учет кодов на&nbsp;всем сроке хранения не&nbsp;ведется. Data&nbsp;Matrix сканируется отдельно&nbsp;— только при&nbsp;заказе услуги на&nbsp;выходе со&nbsp;склада</p>
+        </blockquote>
+
+        <!-- 5 -->
+        <h2>Когда требуется дополнительное сканирование на&nbsp;выходе</h2>
+        <p>Сканирование подключается к&nbsp;конкретной заявке на&nbsp;выдачу или&nbsp;отгрузку груза. Обычно оно нужно, если:</p>
+        <ul>
+          <li>поклажедателю требуется перечень кодов Data&nbsp;Matrix, фактически вошедших в&nbsp;конкретную отгрузку;</li>
+          <li>реестр нужен бухгалтерии или&nbsp;оператору ЭДО для&nbsp;дальнейшего оформления документов;</li>
+          <li>в&nbsp;одной заявке несколько ГРМ, и&nbsp;коды нужно связать с&nbsp;выбранными грузовыми местами;</li>
+          <li>важно исключить ручное переписывание кодов;</li>
+          <li>нужно зафиксировать отсутствующие, поврежденные или&nbsp;нечитаемые этикетки</li>
+        </ul>
+
+        <!-- 6 -->
+        <h2>Как&nbsp;коды связываются с&nbsp;ГРМ и&nbsp;заказом</h2>
+        <p>Связь между двумя уровнями учета появляется в&nbsp;момент отгрузки. Процесс выглядит так:</p>
+        <ol>
+          <li>Поклажедатель выбирает в&nbsp;личном кабинете нужные ГРМ и&nbsp;создает заявку на&nbsp;выдачу или&nbsp;доставку</li>
+          <li>В&nbsp;заявке указывается необходимость сканирования кодов «Честный&nbsp;ЗНАК», требуемый формат реестра и&nbsp;особые требования к&nbsp;обработке</li>
+          <li>Сотрудник склада находит выбранные ГРМ и&nbsp;перемещает их&nbsp;в&nbsp;зону обработки заказа</li>
+          <li>Если Data&nbsp;Matrix находится внутри короба или&nbsp;под&nbsp;транспортной упаковкой, доступ к&nbsp;коду обеспечивается только по&nbsp;согласованному заданию поклажедателя</li>
+          <li>Сотрудник считывает доступные коды терминалом сбора данных. Каждый считанный код фиксируется в&nbsp;составе конкретного заказа</li>
+          <li>Система формирует перечень фактически отсканированных кодов с&nbsp;привязкой к&nbsp;заказу и&nbsp;ГРМ</li>
+        </ol>
+        <figure class="wp-block-image size-large">
+          <picture>
+            <source srcset="assets/images/photo-schema.webp" type="image/webp">
+            <img src="assets/images/photo-schema.png" alt="Связь номера ГРМ с заказом на отгрузку и реестром кодов Data Matrix" width="1200" height="670" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <p>Код всегда привязывается к&nbsp;заказу на&nbsp;отгрузку. Связь с&nbsp;конкретным ГРМ устанавливается, если коды сканируются последовательно по&nbsp;отдельным грузовым местам и&nbsp;такое требование указано в&nbsp;заявке. Если один и&nbsp;тот&nbsp;же&nbsp;код считан повторно, повтор фиксируется и&nbsp;не&nbsp;добавляется как&nbsp;новая единица</p>
+
+        <!-- 7 -->
+        <h2>Что&nbsp;получает поклажедатель</h2>
+        <p>Результат обработки&nbsp;— реестр фактически отсканированных кодов в&nbsp;формате XLSX. В&nbsp;нем:</p>
+        <ul>
+          <li>коды Data&nbsp;Matrix, считанные при&nbsp;обработке заказа;</li>
+          <li>номер заявки или&nbsp;заказа на&nbsp;отгрузку;</li>
+          <li>номера ГРМ, из&nbsp;которых считаны коды,&nbsp;— если процесс обработки позволяет установить такую связь;</li>
+          <li>отдельно отмеченные успешно считанные, повторные и&nbsp;нечитаемые коды</li>
+        </ul>
+        <p>Реестр передается поклажедателю для&nbsp;дальнейшей работы в&nbsp;его&nbsp;учетной системе, ЭДО или&nbsp;ГИС&nbsp;МТ. Подробнее о&nbsp;подготовке заявки и&nbsp;составе файла&nbsp;— в&nbsp;материале <a href="../website_article_reestr/index.html">как&nbsp;получить реестр кодов Data&nbsp;Matrix при&nbsp;отгрузке</a></p>
+        <p>Реестр содержит результаты складского сканирования и&nbsp;сам по&nbsp;себе не&nbsp;изменяет статус кодов в&nbsp;ГИС&nbsp;МТ. Передача сведений в&nbsp;«Честный&nbsp;ЗНАК», формирование УПД и&nbsp;работа через ЭДО остаются на&nbsp;стороне поклажедателя, если иное не&nbsp;предусмотрено отдельным соглашением</p>
+
+        <!-- 8 -->
+        <h2>Частые вопросы</h2>
+        <h3>Является&nbsp;ли&nbsp;ГРМ кодом «Честного&nbsp;ЗНАКа»?</h3>
+        <p>Нет. ГРМ&nbsp;— внутренний идентификатор грузового места на&nbsp;складе «АМБАР». Он&nbsp;не&nbsp;относится к&nbsp;системе маркировки и&nbsp;не&nbsp;заменяет коды Data&nbsp;Matrix на&nbsp;товаре</p>
+        <h3>Сканирует&nbsp;ли&nbsp;«АМБАР» коды при&nbsp;приемке груза?</h3>
+        <p>Нет. При&nbsp;обычной приемке склад учитывает грузовые места по&nbsp;номерам ГРМ, выполняет замер и&nbsp;фотофиксацию. Data&nbsp;Matrix сканируется только на&nbsp;выходе, если услуга добавлена к&nbsp;заявке на&nbsp;отгрузку</p>
+        <h3>Сколько кодов Data&nbsp;Matrix может быть в&nbsp;одном ГРМ?</h3>
+        <p>Столько, сколько маркированных единиц находится в&nbsp;грузовом месте. При&nbsp;приемке склад их&nbsp;не&nbsp;пересчитывает: перечень кодов появляется только после сканирования на&nbsp;выходе</p>
+        <h3>Можно&nbsp;ли&nbsp;связать каждый код с&nbsp;конкретным ГРМ?</h3>
+        <p>Да, если коды сканируются последовательно по&nbsp;отдельным грузовым местам и&nbsp;такое требование указано в&nbsp;заявке</p>
+        <h3>Можно&nbsp;ли&nbsp;отсканировать код короба или&nbsp;паллеты вместо каждой единицы?</h3>
+        <p>Это&nbsp;возможно только при&nbsp;наличии корректного агрегированного кода и&nbsp;заранее согласованного процесса. Стандартный сценарий предусматривает сканирование доступных Data&nbsp;Matrix отдельных единиц</p>
+        <h3>Можно&nbsp;ли&nbsp;проверить, находится&nbsp;ли&nbsp;код в&nbsp;обороте?</h3>
+        <p>Стандартная услуга не&nbsp;включает онлайн-проверку статуса кода в&nbsp;ГИС&nbsp;МТ. Склад фиксирует символьную последовательность, считанную с&nbsp;этикетки</p>
+
+        <!-- 9–10. CTA на услугу и на хранение для юридических лиц (финальный блок с двумя кнопками, ТЗ раздел 10) -->
+        <h2>Получите реестр кодов по&nbsp;своей отгрузке</h2>
+        <blockquote class="article_cta_box">
+          <p>Если груз уже&nbsp;хранится в&nbsp;«АМБАР», подключите сканирование кодов к&nbsp;заявке на&nbsp;выдачу&nbsp;— менеджер рассчитает стоимость и&nbsp;согласует порядок обработки. Если груз пока не&nbsp;на&nbsp;складе, разместите его&nbsp;на&nbsp;ответственное хранение: каждому месту присвоят ГРМ и&nbsp;сделают фото в&nbsp;личном кабинете</p>
+          <div class="article_cta">
+            <a class="btn" href="../website_page_chz/index.html">Заказать сканирование</a>
+            <a class="btn btn_grey" href="https://ambar-sklad.ru/uslugi/sklad-dlya-yuridicheskih-lits/">Разместить груз на&nbsp;хранение</a>
+          </div>
+        </blockquote>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+<!-- Только для превью: возврат к списку страниц -->
+<a href="../index.html" style="position:fixed;top:12px;right:12px;z-index:10000;padding:8px 14px;border-radius:8px;background:#212A33;color:#fff;font:600 14px/20px Manrope,system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.18)">← Все страницы</a>
+</body>
+</html>

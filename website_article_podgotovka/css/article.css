@@ -1,0 +1,81 @@
+/* =============================================
+   Статьи блога «АМБАР» (единый файл для статей 1–3 по ТЗ)
+   Дополнение к blog.css — подключать ПОСЛЕ него.
+
+   Статья собрана из элементов шаблона статей:
+   .breadcrumbs, .entry-header (обложка + H1), .entry-content
+   (h2, h3, p, ul, ol, table, blockquote, figure, ссылки).
+   Здесь — только то, чего в шаблоне нет.
+   ============================================= */
+
+
+/* ---- Заглушка изображения (до появления фото) ---- */
+.img_stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  padding: 20px;
+  background: #e1e6eb;
+  color: #626a73;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+/* ---- Таблица: на узком экране прокручивается по горизонтали ----
+   В шаблоне figure в контенте с overflow: hidden — таблица обрезалась бы */
+.single-post-page .single-post .entry-content figure.wp-block-table {
+  margin: 25px 0;
+  overflow-x: auto;
+  border-radius: 0;
+}
+
+.single-post-page .single-post .entry-content figure.wp-block-table table {
+  min-width: 560px;
+  margin: 0;
+}
+
+
+/* ---- Финальный блок статьи ----
+   В шаблоне blockquote залит #fef8f9 — серая кнопка на нём теряется,
+   поэтому фон белый, рамка шаблона остаётся */
+.single-post-page .single-post .entry-content blockquote.article_cta_box {
+  background: #fff;
+}
+
+
+/* ---- Кнопки в финальном блоке статьи ----
+   В шаблоне ссылки в .entry-content красные с подчёркиванием —
+   для кнопок возвращаем вид .btn / .btn_grey */
+.single-post-page .single-post .entry-content .article_cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.single-post-page .single-post .entry-content a.btn {
+  max-width: max-content;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.single-post-page .single-post .entry-content a.btn:hover {
+  color: #fff;
+}
+
+.single-post-page .single-post .entry-content a.btn.btn_grey,
+.single-post-page .single-post .entry-content a.btn.btn_grey:hover {
+  color: #000;
+}
+
+@media (max-width: 640px) {
+  .single-post-page .single-post .entry-content a.btn {
+    width: 100%;
+    max-width: none;
+  }
+}
