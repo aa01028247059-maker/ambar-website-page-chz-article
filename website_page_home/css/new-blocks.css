@@ -1,0 +1,1138 @@
+/* =============================================
+   Амбар — главная страница, новые блоки
+   1. «Для каких задач подходит хранение»  (.storage_tasks)
+   2. «Что можно хранить»                  (.storage_things)
+   3. «Как рассчитать необходимый объём»   (.storage_volume)
+
+   Подключать после home.css сайта и tokens.css.
+   Классы — в snake_case, как на сайте. Глобальные стили сайта
+   (section, .container, h2, .btn) не переопределяем, а используем.
+   Внимание: на сайте p { margin: 15px 0; font-size: 16–18px } и
+   a:not(.btn):hover { color: #d92d2b } — поэтому у компонентов
+   отступы, размеры и цвета текста заданы явно.
+   ============================================= */
+
+
+/* =============================================
+   БАЗОВЫЕ КОМПОНЕНТЫ
+   ============================================= */
+
+/* ---- Заглушка изображения (до появления фото) ----
+   В продакшене заменяется на <img> с теми же размерами. */
+.img_stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  font: var(--font-weight-medium) 13px/18px var(--font-family);
+  text-align: center;
+}
+
+/* ---- Информационная плашка (Figma: card-help) ---- */
+.info_card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 800px;
+  padding: 12px 16px;
+  border-radius: var(--radius-info);
+  background: var(--color-info-bg);
+  color: var(--color-text-strong);
+}
+
+.info_card_icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.info_card_body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info_card_title {
+  margin: 0;
+  font: var(--font-weight-semibold) 16px/24px var(--font-family);
+  color: var(--color-text-strong);
+}
+
+.info_card_text {
+  margin: 0;
+  font: var(--font-weight-regular) 14px/24px var(--font-family);
+  color: var(--color-text-strong);
+}
+
+.info_card--full {
+  max-width: none;
+}
+
+/* ---- Ссылка-кнопка без фона (Figma: bttn-ghst) ---- */
+.ghost_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px 16px 24px;
+  border-radius: var(--radius-info);
+  color: var(--color-gray-80, #333940);
+  font: var(--font-weight-bold) 16px/24px var(--font-family);
+  transition: color var(--transition);
+}
+
+.ghost_link img {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-transform);
+}
+
+/* Наведение — только цвет текста, без фона */
+.ghost_link:hover {
+  color: var(--color-primary);
+}
+
+.ghost_link:hover img {
+  transform: translateY(2px);
+}
+
+/* ---- Общее для карточек-ссылок ---- */
+.task_card,
+.thing_card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-strong);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition-transform);
+}
+
+/* перебиваем a:not(.btn):hover сайта — текст карточки не краснеет */
+a.task_card:hover,
+a.thing_card:hover {
+  color: var(--color-text-strong);
+}
+
+.task_card:focus-visible,
+.thing_card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .task_card:hover,
+  .thing_card:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-card-hover);
+    transform: var(--hover-lift);
+  }
+}
+
+/* ---- Сетка карточек: 4 в ряд, как «Стоимость хранения» ---- */
+.cards_grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin: var(--section-head-gap) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* =============================================
+   КОМПОНЕНТ: карточка задачи (.task_card)
+   фото + бейдж объёма / заголовок + стрелка / текст / плашка-выгода
+   ============================================= */
+.task_card_picture {
+  position: relative;
+  flex-shrink: 0;
+  height: 174px;
+}
+
+/* picture (WebP + запасной JPG) — блочный, чтобы img занял всю высоту */
+.task_card_picture picture {
+  display: block;
+  height: 100%;
+}
+
+.task_card_picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.task_card_volume {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 4px 8px;
+  border-top-left-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-strong);
+  font: var(--font-weight-medium) 17px/26px var(--font-family);
+  white-space: nowrap;
+}
+
+.task_card_body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 8px 8px;
+}
+
+.task_card_head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.task_card_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-weight-bold) 17px/26px var(--font-family);
+  letter-spacing: 0;
+}
+
+.task_card_arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-transform);
+}
+
+.task_card_text {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-weight-medium) 15px/24px var(--font-family);
+}
+
+.task_card_benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-strong);
+  font: var(--font-weight-medium) 15px/24px var(--font-family);
+}
+
+.task_card_benefit img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+@media (hover: hover) {
+  .task_card:hover .task_card_arrow {
+    transform: translateX(4px);
+  }
+}
+
+
+/* =============================================
+   КОМПОНЕНТ: карточка «что храним» (.thing_card)
+   заголовок / изображение предмета / «как храним» + стрелка
+   ============================================= */
+.thing_card_title {
+  margin: 0;
+  padding: 12px 16px 8px;
+  color: var(--color-text-strong);
+  font: var(--font-weight-bold) 17px/26px var(--font-family);
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.thing_card_picture {
+  flex-shrink: 0;
+  height: 174px;
+}
+
+.thing_card_picture picture {
+  display: block;
+  height: 100%;
+}
+
+.thing_card_picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thing_card_footer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.thing_card_meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.thing_card_label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-weight-medium) 15px/24px var(--font-family);
+}
+
+.thing_card_arrow {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.thing_card_arrow img {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-transform);
+}
+
+.thing_card_text {
+  min-height: 48px;
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-weight-medium) 15px/24px var(--font-family);
+}
+
+@media (hover: hover) {
+  .thing_card:hover .thing_card_arrow img {
+    transform: translateX(3px);
+  }
+}
+
+
+/* =============================================
+   БЛОК 1. «Для каких задач подходит хранение»
+   ============================================= */
+.storage_tasks .info_card {
+  margin-top: var(--stack-gap);
+}
+
+
+/* =============================================
+   БЛОК 2. «Что можно хранить»
+   ============================================= */
+.storage_things_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: var(--stack-gap);
+}
+
+.storage_things_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--grid-gap);
+  width: 100%;
+}
+
+.storage_things_actions .info_card {
+  flex: 0 1 800px;
+}
+
+.storage_things_actions .btn {
+  flex-shrink: 0;
+}
+
+
+/* =============================================
+   БЛОК 3. «Как рассчитать необходимый объём»
+   ============================================= */
+.storage_volume_subtitle {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  font: var(--font-weight-bold) var(--h3-card-size-lg)/1.3 var(--font-family);
+  letter-spacing: 0;
+}
+
+.storage_volume_lead {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-weight-regular) 16px/1.4 var(--font-family);
+}
+
+/* ---- 3.1 Фото + схема короба ---- */
+.volume_intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin-top: var(--section-head-gap);
+}
+
+.volume_intro_photo {
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.volume_intro_photo picture {
+  display: block;
+  height: 100%;
+}
+
+/* Предметы на фото — в нижней половине кадра: при обрезке держим их в рамке */
+.volume_intro_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 75%;
+}
+
+.volume_box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: var(--card-pad-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.volume_box_figure {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+}
+
+.volume_box_svg {
+  flex-shrink: 0;
+  width: 300px;
+  max-width: 55%;
+  height: auto;
+}
+
+.volume_box_caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.volume_box_name {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-weight-medium) 15px/24px var(--font-family);
+}
+
+.volume_box_total {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-weight-bold) 40px/1.1 var(--font-family);
+  letter-spacing: -1px;
+}
+
+.volume_box_formula {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-weight-regular) 14px/22px var(--font-family);
+}
+
+.volume_box_hint {
+  align-self: flex-start;
+  margin: 8px 0 0;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--color-secondary-10);
+  color: var(--color-secondary);
+  font: var(--font-weight-semibold) 14px/22px var(--font-family);
+}
+
+.volume_steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+  counter-reset: volume-step;
+}
+
+.volume_steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-text);
+  font: var(--font-weight-medium) 16px/24px var(--font-family);
+  counter-increment: volume-step;
+}
+
+.volume_steps li::before {
+  content: counter(volume-step);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-round);
+  background: var(--color-secondary-80);
+  color: var(--color-white);
+  font: var(--font-weight-bold) 13px/1 var(--font-family);
+}
+
+.volume_steps a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- 3.2 Калькулятор (Figma: block-1, 2244:4490) ---- */
+.volume_calc {
+  margin-top: var(--stack-gap);
+}
+
+.volume_calc_layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 416px;
+  align-items: start;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Список: вкладки + строки, внутренний отступ 24px как в макете */
+.calc_list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.calc_tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.calc_tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-chip);
+  color: var(--color-text-muted);
+  font: var(--font-weight-medium) 17px/24px var(--font-family);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.calc_tab:hover {
+  background: var(--color-surface-grey-hover);
+}
+
+.calc_tab[aria-selected="true"] {
+  background: var(--color-secondary-80);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+}
+
+.calc_tab:focus-visible,
+.calc_step:focus-visible,
+.calc_reset:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Счётчик выбранных вещей на вкладке */
+.calc_tab_count {
+  min-width: 24px;
+  padding: 0 4px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: var(--font-weight-medium) 16px/24px var(--font-family);
+  text-align: center;
+}
+
+.calc_tab[aria-selected="true"] .calc_tab_count {
+  color: var(--color-secondary-80);
+  font-weight: var(--font-weight-semibold);
+}
+
+.calc_tab_count[hidden] {
+  display: none;
+}
+
+.calc_panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calc_panel[hidden] {
+  display: none;
+}
+
+/* Строка: иконка · название + подсказка · счётчик */
+.calc_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.calc_item_icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.calc_item_info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 12px;
+  min-width: 0;
+}
+
+.calc_item_name {
+  margin: 0;
+  color: var(--color-text-interactive);
+  font: var(--font-lead);
+}
+
+.calc_item_hint {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-small);
+}
+
+.calc_stepper {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 130px;
+  height: var(--control-size);
+}
+
+/* Кнопки «−/+»: иконка 24px в поле 44px. Иконки — в assets/svg/icons */
+.calc_step {
+  flex-shrink: 0;
+  width: var(--control-size);
+  height: var(--control-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent center / 24px 24px no-repeat;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.calc_step--minus {
+  background-image: url("../assets/svg/icons/icon-step-minus.svg");
+}
+
+.calc_step--minus:disabled {
+  background-image: url("../assets/svg/icons/icon-step-minus-disabled.svg");
+  cursor: default;
+}
+
+.calc_step--plus {
+  background-image: url("../assets/svg/icons/icon-step-plus.svg");
+}
+
+.calc_step:hover:not(:disabled) {
+  background-color: var(--color-surface-muted);
+}
+
+.calc_stepper output {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-strong);
+  font: var(--font-weight-medium) 17px/24px var(--font-family);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Итог. Сдвинут вниз на высоту вкладок, чтобы начинаться вровень со списком:
+   24px отступ списка + 40px вкладки + 24px зазор */
+.calc_summary {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 88px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.calc_summary_label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-lead);
+}
+
+.calc_summary_head {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.calc_summary_volume {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.calc_summary_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.calc_summary_total {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-h3);
+  white-space: nowrap;
+}
+
+.calc_summary_meta {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--font-small);
+}
+
+.calc_summary_badge {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 2px 8px;
+  border-radius: var(--radius-2xs);
+  background: var(--color-surface-muted);
+  color: var(--color-text-strong);
+  font: var(--font-small);
+  white-space: nowrap;
+}
+
+.calc_summary_badge[hidden] {
+  display: none;
+}
+
+/* Шкала тарифов: ступени расставлены равномерно, заливка — по текущему объёму */
+.volume_scale {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.volume_scale_track {
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-chip);
+}
+
+.volume_scale_fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  border-radius: var(--radius-2xs);
+  background: var(--color-success);
+  transition: width .3s ease;
+}
+
+/* Деления: зазор от шкалы 2px (вместо общего 12px), риска 1 × 8px + подпись */
+.volume_scale_ticks {
+  position: relative;
+  height: 32px;
+  margin: -10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.volume_scale_ticks li {
+  position: absolute;
+  top: 0;
+  padding-top: 8px;
+  color: var(--color-text-strong);
+  font: var(--font-small);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.volume_scale_ticks li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 8px;
+  background: var(--color-primary);
+}
+
+.volume_scale_ticks li:last-child {
+  transform: translateX(-100%);
+}
+
+.volume_scale_ticks li.is-active {
+  color: var(--color-primary);
+}
+
+.calc_tariff {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calc_tariff_name {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-lead);
+}
+
+.calc_tariff_price {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-price);
+}
+
+.calc_tariff_price[hidden] {
+  display: none;
+}
+
+/* Плашка «Расчёт примерный» — info_card с заголовком, шрифт крупнее базового */
+.calc_info .info_card_icon {
+  margin-top: 2px;
+}
+
+.calc_info .info_card_body {
+  gap: 2px;
+}
+
+.calc_info .info_card_title {
+  font: var(--font-weight-semibold) 18px/32px var(--font-family);
+}
+
+.calc_info .info_card_text {
+  font: var(--font-weight-regular) 17px/32px var(--font-family);
+}
+
+.calc_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calc_actions_text {
+  margin: 0;
+  color: var(--color-text-strong);
+  font: var(--font-lead-regular);
+}
+
+.calc_actions .btn {
+  width: 100%;
+  min-height: var(--btn-height-lg);
+  padding: 16px 32px;
+  line-height: 24px;
+}
+
+/* Ghost-кнопка: шрифт как у .btn рядом, наведение — только цвет текста (как .ghost_link) */
+.calc_reset {
+  width: 100%;
+  padding: 16px 24px;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: var(--color-text-interactive);
+  font: var(--font-weight-semibold) 16px/24px var(--font-family);
+  text-align: center;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.calc_reset:hover {
+  color: var(--color-primary);
+}
+
+/* Мини-итог, прилипающий к низу экрана на планшете и мобильном */
+.calc_sticky {
+  display: none;
+}
+
+/* =============================================
+   ЯКОРЬ В FAQ: подсветка открытого по ссылке вопроса
+   ============================================= */
+.faq_item.is-anchored {
+  border-color: var(--color-primary);
+}
+
+
+/* =============================================
+   АДАПТИВ
+   ============================================= */
+@media (max-width: 1200px) {
+  .volume_calc_layout {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+}
+
+/* Фото и схема короба — в одну колонку раньше остальных блоков:
+   в двух колонках область фото становится вертикальной и срезает композицию */
+@media (max-width: 1200px) {
+  .volume_intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .volume_intro_photo {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .volume_box_figure {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .volume_box_svg {
+    max-width: 55%;
+  }
+}
+
+/* Планшет */
+@media (max-width: 950px) {
+  .cards_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .storage_things_actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .storage_things_actions .info_card {
+    flex-basis: auto;
+    max-width: none;
+  }
+
+  .volume_calc_layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Калькулятор в одну колонку: список без внутреннего отступа, итог сразу под ним */
+  .calc_list {
+    padding: 0;
+  }
+
+  .calc_summary {
+    margin-top: 0;
+  }
+
+  .calc_sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    background: var(--color-text-strong);
+    color: var(--color-white);
+    box-shadow: var(--shadow-popover);
+    font: var(--font-weight-medium) 15px/22px var(--font-family);
+  }
+
+  .calc_sticky strong {
+    font: var(--font-weight-bold) 20px/26px var(--font-family);
+  }
+
+  .calc_sticky a {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .calc_sticky[hidden] {
+    display: none;
+  }
+}
+
+/* Мобильный */
+@media (max-width: 640px) {
+  /* Задачи: горизонтальная лента со снапом, как слайдеры сайта */
+  .storage_tasks .cards_grid {
+    grid-template-columns: none;
+    grid-auto-columns: 82%;
+    grid-auto-flow: column;
+    gap: var(--grid-gap-sm);
+    margin-right: calc(var(--container-gutter) * -1);
+    margin-left: calc(var(--container-gutter) * -1);
+    padding: 4px var(--container-gutter) 8px;
+    overflow-x: auto;
+    scroll-padding: 0 var(--container-gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .storage_tasks .cards_grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .storage_tasks .cards_grid > li {
+    scroll-snap-align: start;
+  }
+
+  .task_card_picture {
+    height: 160px;
+  }
+
+  /* Что храним: сетка 2 × 4 */
+  .storage_things .cards_grid {
+    gap: var(--grid-gap-sm);
+  }
+
+  .thing_card_title {
+    padding: 10px 10px 4px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .thing_card_picture {
+    height: 110px;
+  }
+
+  .thing_card_footer {
+    padding: 8px 10px 10px;
+  }
+
+  .thing_card_label {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .thing_card_arrow {
+    padding: 4px;
+  }
+
+  .thing_card_text {
+    min-height: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .storage_things_actions .btn {
+    width: 100%;
+  }
+
+  .ghost_link {
+    padding-left: 0;
+  }
+
+  /* Объём */
+  .volume_box_figure {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .volume_box_svg {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .volume_box_total {
+    font-size: 32px;
+  }
+
+  .calc_tabs {
+    flex-wrap: nowrap;
+    margin-right: calc(var(--container-gutter) * -1);
+    padding-right: var(--container-gutter);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .calc_tab {
+    flex-shrink: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* Строка: подсказка под названием, счётчик компактнее */
+  .calc_item {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .calc_item_info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calc_item_name {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .calc_item_hint {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .calc_stepper {
+    width: 112px;
+  }
+
+  .calc_summary {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .task_card,
+  .thing_card,
+  .task_card_arrow,
+  .thing_card_arrow img,
+  .ghost_link img,
+  .volume_scale_fill {
+    transition: none;
+  }
+
+  .task_card:hover,
+  .thing_card:hover {
+    transform: none;
+  }
+}

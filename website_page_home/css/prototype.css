@@ -1,0 +1,36 @@
+/* =============================================
+   Только для прототипа — НЕ переносить на сайт.
+   ============================================= */
+
+/* на сайте отступ под фиксированную шапку; шапки в прототипе нет */
+body {
+  padding-top: 40px;
+}
+
+/* метка «существующая / новая секция» */
+.proto_mark {
+  max-width: 1300px;
+  width: calc(100% - 20px);
+  margin: 0 auto 16px;
+  font: 600 12px/16px "Manrope", sans-serif;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #9AA0A6;
+}
+
+.proto_mark--new {
+  color: #068DC7;
+}
+
+/* заглушка для пропущенных секций */
+.proto_skip {
+  max-width: 1300px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  padding: 24px;
+  border: 1.5px dashed #D3D8DE;
+  border-radius: 10px;
+  color: #626A73;
+  font: 500 15px/24px "Manrope", sans-serif;
+  text-align: center;
+}

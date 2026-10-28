@@ -1,0 +1,145 @@
+/* =============================================
+   Амбар — главная страница, новые блоки
+   CSS-токены, снятые с живого сайта ambar-sklad.ru
+   Источник: wp-content/themes/devseopro.com/assets/css/home.css (снято 2026-10-22)
+   Где значение расходится с Figma-ДС (ds/foundation.md) — берём живой сайт,
+   Figma-значение указано в комментарии.
+   ============================================= */
+
+:root {
+  /* ---- Бренд ---- */
+  --color-primary: #D92D2B;           /* кнопки, акценты, hover ссылок */
+  --color-primary-hover: #C42624;     /* .btn:hover на сайте (в Figma — #CC211F) */
+  --color-primary-dark: #CC211F;      /* фон верхней плашки header_top */
+  --color-primary-tint-08: rgba(217, 45, 43, .08); /* hover пунктов подменю */
+  --color-primary-tint-14: rgba(217, 45, 43, .14);
+
+  /* ---- Вторичный (сине-бирюзовый) ---- */
+  --color-secondary: #244B5A;         /* текст подменю, тени (в Figma — #345873) */
+  --color-secondary-60: #547D99;
+  --color-secondary-30: #C0D9EB;
+  --color-secondary-10: #EBF5FC;      /* фон картинки в карточках «Стоимость хранения» */
+  --color-nav-glass: rgba(51, 86, 106, .7); /* плашка навигации в шапке */
+  --color-secondary-70: #466F8C;      /* иконка-галочка в карточках задач (Figma Secondary/70) */
+  --color-input-border: #C0D9EB;      /* рамка полей формы .more_questions_form_item input */
+
+  --color-secondary-80: #345873;      /* активная вкладка калькулятора (Figma Secondary/80, bg-scnd) */
+
+  /* ---- Системные (из Figma-макета новых блоков) ---- */
+  --color-info-bg: #E8F8FF;           /* фон информационной плашки card-help */
+  --color-info: #068DC7;              /* иконка info в плашке */
+  --color-success: #2DB270;           /* заливка шкалы тарифов, кнопки «+/−» (Figma surf-trtia-int) */
+
+  /* ---- Текст ---- */
+  --color-text: #1A1A1A;              /* body */
+  --color-heading: #000000;           /* h1, h2 */
+  --color-text-strong: #212A33;       /* крупные цифры, заголовки карточек тарифов */
+  --color-text-muted: #626A73;        /* подписи, вторичный текст */
+  --color-text-interactive: #333940;  /* названия вещей и кнопка «Сбросить» в калькуляторе (Figma txt-int) */
+  --color-white: #FFFFFF;
+
+  /* ---- Поверхности ---- */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F5F7FA;     /* фон секции «Как сдать вещи», плашки h4 */
+  --color-surface-chip: #EDF0F5;      /* плашка-подзаголовок первого экрана */
+  --color-surface-grey: #EBEDF2;      /* .btn_grey */
+  --color-surface-grey-hover: #E2E5EB;
+
+  /* ---- Рамки ---- */
+  --color-border: #E1E6EB;            /* карточки тарифов, «Кому мы помогаем» */
+  --color-border-strong: #D9D9D9;     /* карточки «Почему выбирают» */
+  --color-border-hover: #D8DCE3;
+
+  /* ---- Типографика ---- */
+  --font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-body: 16px;                  /* body, line-height 140% */
+  --text-body-lh: 1.4;
+  --text-lead: 17px;                  /* описания в крупных блоках */
+  --text-small: 15px;                 /* описания карточек */
+  --text-caption: 14px;               /* подписи, muted */
+
+  --h1-size: 42px;                    /* ≤640: 25px */
+  --h2-size: 32px;                    /* ≤640: 20px; в отдельных секциях 28px */
+  --h2-size-alt: 28px;
+  --h2-lh: 1.2;
+  --h2-ls: -1px;
+  --h2-mb: 35px;                      /* ≤640: 15px */
+  --h3-card-size: 20px;               /* заголовок карточки с фото («Кому мы помогаем»), ≤640: 18px */
+  --h3-card-size-lg: 22px;            /* заголовок крупной карточки («Почему выбирают») */
+
+  --btn-font: 600 16px/22px var(--font-family);
+
+  /* Шрифтовые стили калькулятора (Figma desktop-1440px) */
+  --font-h3: var(--font-weight-bold) 26px/34px var(--font-family);           /* h3-bold-26: итоговый объём */
+  --font-lead: var(--font-weight-medium) 17px/26px var(--font-family);       /* medium-17: подписи, названия */
+  --font-lead-regular: var(--font-weight-regular) 17px/26px var(--font-family); /* regular-17 */
+  --font-small: var(--font-weight-medium) 15px/24px var(--font-family);      /* medium-15: подсказки, деления */
+  --font-price: var(--font-weight-bold) 20px/28px var(--font-family);        /* bold-20: цена тарифа */
+
+  /* ---- Радиусы ---- */
+  --radius-2xs: 4px;                  /* бейдж «N предметов» (Figma rad-xs) */
+  --radius-xs: 5px;                   /* плашки-теги */
+  --radius-sm: 8px;                   /* кнопки, пункты меню */
+  --radius-md: 10px;                  /* карточки, видео — основной радиус сайта */
+  --radius-card: 12px;                /* карточка итога калькулятора, ghost-кнопка (Figma rad-lg) */
+  --radius-lg: 16px;                  /* крупные карточки «Почему выбирают» */
+  --radius-pill: 24px;                /* навигация в шапке */
+  --radius-round: 50%;
+
+  /* ---- Тени (по умолчанию карточки без тени — только рамка) ---- */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, .08);       /* hover .btn_grey / .btn_white */
+  --shadow-card-hover: 0 8px 24px rgba(36, 75, 90, .08);
+  --shadow-primary-hover: 0 6px 16px rgba(217, 45, 43, .18); /* hover .btn */
+  --shadow-primary-active: 0 2px 6px rgba(217, 45, 43, .12);
+  --shadow-popover: 0 18px 42px rgba(29, 46, 61, .2);
+
+  /* ---- Сетка и отступы ---- */
+  --container-max: 1300px;
+  --container-gutter: 10px;           /* .container { width: calc(100% - 20px) } */
+  --section-gap: 125px;               /* section { margin: 125px 0 }; ≤1200: 75px; ≤640: 50px */
+  --grid-gap: 25px;                   /* основной gap между карточками */
+  --grid-gap-sm: 15px;                /* gap в 2-колоночной мобильной сетке */
+  --card-pad: 16px;                   /* карточка с фото */
+  --card-pad-md: 20px;                /* карточка тарифа; крупная карточка на mobile */
+  --card-pad-lg: 30px;                /* крупная карточка на desktop */
+  --section-head-gap: 30px;           /* заголовок → сетка (storage_cost_slider_wrap) */
+  --stack-gap: 48px;                  /* сетка карточек → плашка под ней (Figma); ≤640: 24px */
+  --radius-info: 12px;                /* информационная плашка (Figma card-help) */
+  --control-size: 44px;               /* кнопки «+/−»: иконка 24px + отступы 10px (Figma bttn-step) */
+  --btn-height-lg: 56px;              /* кнопка «Получить консультацию» в итоге калькулятора */
+
+  /* ---- Движение ---- */
+  --transition: .2s ease;
+  --transition-transform: .25s ease;
+  --hover-lift: translateY(-2px);     /* как у .btn:hover */
+}
+
+/* Брейкпоинты сайта (в CSS-переменных их не использовать — только как справка):
+   1200px — уменьшение отступов секций
+    950px — планшет: перестройка первого экрана и сеток 4 → 2
+    640px — мобильный: h2 20px, карточки в 1 колонку
+    480px — узкий мобильный */
+
+@media (max-width: 1200px) {
+  :root {
+    --section-gap: 75px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-gap: 50px;
+    --h1-size: 25px;
+    --h2-size: 20px;
+    --h2-size-alt: 20px;
+    --h2-mb: 15px;
+    --h3-card-size: 18px;
+    --card-pad-lg: 20px;
+    --stack-gap: 24px;
+  }
+}

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Амбар — главная, новые блоки (прототип)</title>
+
+  <!-- Только для прототипа: шрифт с сайта может не загрузиться локально из-за CORS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Только для прототипа: копия CSS сайта -->
+  <link rel="stylesheet" href="css/site/home.css">
+
+  <!-- Новые блоки: эти два файла переносятся на сайт -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/new-blocks.css">
+
+  <!-- Только для прототипа -->
+  <link rel="stylesheet" href="css/prototype.css">
+<link rel="stylesheet" href="https://ambar-sklad.ru/wp-content/themes/devseopro.com/assets/css/fancybox.css?ver=7.1.3">
+</head>
+<body>
+
+  <!-- ============ СУЩЕСТВУЮЩИЙ: первый экран с видеоблоком ============ -->
+  <section class="first_screen">
+    <p class="proto_mark">Существующий блок · первый экран</p>
+    <div class="container">
+      <div class="first_screen_item" data-index="0">
+        <div class="first_screen_item_top">
+          <p>Освободите место для жизни</p>
+          <h1>Временное хранение вещей в Москве от 1 156 ₽ в месяц</h1>
+        </div>
+        <ul>
+          <li>
+            <img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/first_screen_advanatages_1-2.svg?v=1782161134" alt="Иконка доставки Компании Амбар" />
+            <p>Доставим, упакуем и вернем в любой день</p>
+          </li>
+          <li>
+            <img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/first_screen_advanatages_2-1.svg?v=1782161134" alt="Иконка фотоотчета Компании Амбар" />
+            <p>Фотоотчета личном кабинете</p>
+          </li>
+          <li>
+            <img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/first_screen_advanatages_3-1.svg?v=1782161134" alt="Иконка скидки на хранение Компании Амбар" />
+            <p>Скидки при оплате нескольких месяцев</p>
+          </li>
+        </ul>
+        <div class="btns">
+          <a href="https://newlk.ambar-sklad.ru/login" class="btn" target="_blank">Личный кабинет</a>
+          <a href="#callback-popup" class="btn btn_grey" data-fancybox data-type="inline">Получить консультацию</a>
+        </div>
+      </div>
+      <div class="first_screen_item" data-index="1">
+        <video class="lazy-media lazy-video lazy-video--on-demand"
+          data-src="https://ambar-sklad.ru/wp-content/uploads/2026/05/servis-ambar-1.mp4?v=1782161134"
+          data-autoplay="true" preload="none" playsinline muted loop controls></video>
+        <p>Более <a href="https://ambar-sklad.ru/company/">15 лет</a> мы предоставляем услуги складского хранения и логистики</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ НОВЫЙ БЛОК 1: «Для каких задач подходит хранение» ============ -->
+  <section class="storage_tasks">
+    <p class="proto_mark proto_mark--new">Новый блок 1</p>
+    <div class="container">
+      <h2>Для&nbsp;каких задач подходит хранение</h2>
+
+      <ul class="cards_grid">
+        <li>
+          <a class="task_card" href="https://ambar-sklad.ru/uslugi/hranenie-veshchej-na-vremya-remonta/">
+            <div class="task_card_picture">
+              <picture>
+                <source srcset="assets/images/task-remont.webp" type="image/webp">
+                <img src="assets/images/task-remont.jpg" alt="Квартира перед ремонтом: мебель под плёнкой и упакованные коробки" width="900" height="520" loading="lazy" decoding="async">
+              </picture>
+              <span class="task_card_volume">6–13&nbsp;м³</span>
+            </div>
+            <div class="task_card_body">
+              <div class="task_card_head">
+                <h3 class="task_card_title">На&nbsp;время ремонта <img class="task_card_arrow" src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></h3>
+                <p class="task_card_text">Мебель, техника и&nbsp;вещи до&nbsp;окончания работ</p>
+              </div>
+              <p class="task_card_benefit"><img src="assets/svg/icons/icon-check.svg" alt="" width="24" height="24">Продлите срок онлайн, если ремонт затянется</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="task_card" href="https://ambar-sklad.ru/uslugi/hranenie-pri-pereezde/">
+            <div class="task_card_picture">
+              <picture>
+                <source srcset="assets/images/task-pereezd.webp" type="image/webp">
+                <img src="assets/images/task-pereezd.jpg" alt="Упакованные коробки в квартире перед переездом" width="900" height="520" loading="lazy" decoding="async">
+              </picture>
+              <span class="task_card_volume">6–22&nbsp;м³</span>
+            </div>
+            <div class="task_card_body">
+              <div class="task_card_head">
+                <h3 class="task_card_title">При&nbsp;переезде <img class="task_card_arrow" src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></h3>
+                <p class="task_card_text">Удобное хранение на&nbsp;любой срок</p>
+              </div>
+              <p class="task_card_benefit"><img src="assets/svg/icons/icon-check.svg" alt="" width="24" height="24">Заберём со&nbsp;старого адреса, привезём на&nbsp;новый</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="task_card" href="https://ambar-sklad.ru/uslugi/sezonnoe-hranenie/">
+            <div class="task_card_picture">
+              <picture>
+                <source srcset="assets/images/task-sezon.webp" type="image/webp">
+                <img src="assets/images/task-sezon.jpg" alt="Велосипед, шины и спортивный инвентарь" width="900" height="520" loading="lazy" decoding="async">
+              </picture>
+              <span class="task_card_volume">0,5–1,5&nbsp;м³</span>
+            </div>
+            <div class="task_card_body">
+              <div class="task_card_head">
+                <h3 class="task_card_title">Для&nbsp;сезонных вещей <img class="task_card_arrow" src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></h3>
+                <p class="task_card_text">Велосипеды, шины, спортивный инвентарь</p>
+              </div>
+              <p class="task_card_benefit"><img src="assets/svg/icons/icon-check.svg" alt="" width="24" height="24">Сдайте в&nbsp;конце сезона, заберите в&nbsp;начале следующего</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="task_card" href="https://ambar-sklad.ru/uslugi/hranenie-mebeli/">
+            <div class="task_card_picture">
+              <picture>
+                <source srcset="assets/images/task-mesto.webp" type="image/webp">
+                <img src="assets/images/task-mesto.jpg" alt="Редко используемые вещи в коробках на стеллаже" width="900" height="520" loading="lazy" decoding="async">
+              </picture>
+              <span class="task_card_volume">0,5–3&nbsp;м³</span>
+            </div>
+            <div class="task_card_body">
+              <div class="task_card_head">
+                <h3 class="task_card_title">Чтобы освободить место <img class="task_card_arrow" src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></h3>
+                <p class="task_card_text">Редко используемые вещи и&nbsp;мебель можно передать на&nbsp;склад</p>
+              </div>
+              <p class="task_card_benefit"><img src="assets/svg/icons/icon-check.svg" alt="" width="24" height="24">Каждая вещь с&nbsp;фото в&nbsp;личном кабинете</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="info_card">
+        <img class="info_card_icon" src="assets/svg/icons/icon-info-circle-fill.svg" alt="" width="24" height="24">
+        <div class="info_card_body">
+          <p class="info_card_text">В&nbsp;карточках указан ориентировочный объём под&nbsp;каждую задачу</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ НОВЫЙ БЛОК 2: «Что можно хранить» ============ -->
+  <section class="storage_things">
+    <p class="proto_mark proto_mark--new">Новый блок 2</p>
+    <div class="container">
+      <h2>Что&nbsp;можно хранить</h2>
+
+      <ul class="cards_grid">
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-mebeli/">
+            <h3 class="thing_card_title">Мебель</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-mebel.webp" type="image/webp">
+                <img src="assets/images/thing-mebel.jpg" alt="Диван, кресло, комод и журнальный столик" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;плёнке и&nbsp;гофрокартоне, защита углов</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-bytovoj-tekhniki/">
+            <h3 class="thing_card_title">Бытовая техника</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-tekhnika.webp" type="image/webp">
+                <img src="assets/images/thing-tekhnika.jpg" alt="Холодильник, стиральная машина, микроволновая печь и пылесос" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;плёнке и&nbsp;коробах, стоя</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/sezonnoe-hranenie/">
+            <h3 class="thing_card_title">Сезонные вещи</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-sezon.webp" type="image/webp">
+                <img src="assets/images/thing-sezon.jpg" alt="Пуховик, зимние ботинки, перчатки и свитеры" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;крафт-пакетах и&nbsp;защитной плёнке</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-detskih-veschey/">
+            <h3 class="thing_card_title">Детские вещи</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-detskie.webp" type="image/webp">
+                <img src="assets/images/thing-detskie.jpg" alt="Детская кроватка, коляска и игрушки" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;коробках и&nbsp;защитной плёнке</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-velosipedov/">
+            <h3 class="thing_card_title">Велосипеды</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-velosiped.webp" type="image/webp">
+                <img src="assets/images/thing-velosiped.jpg" alt="Взрослый и детский велосипеды" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">На&nbsp;стеллаже, без&nbsp;нагрузки на&nbsp;колёса</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-sportivnogo-inventarya/">
+            <h3 class="thing_card_title">Спортивный инвентарь</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-sport.webp" type="image/webp">
+                <img src="assets/images/thing-sport.jpg" alt="Сноуборд, лыжи, теннисная ракетка, мячи и гантели" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;чехлах и&nbsp;коробках</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-shin/">
+            <h3 class="thing_card_title">Шины</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-shiny.webp" type="image/webp">
+                <img src="assets/images/thing-shiny.jpg" alt="Комплект шин на дисках" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;пакетах, на&nbsp;стеллаже</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="thing_card" href="https://ambar-sklad.ru/uslugi/hranenie-instrumentov/">
+            <h3 class="thing_card_title">Инструменты</h3>
+            <div class="thing_card_picture">
+              <picture>
+                <source srcset="assets/images/thing-instrumenty.webp" type="image/webp">
+                <img src="assets/images/thing-instrumenty.jpg" alt="Дрель, перфоратор, циркулярная пила и ручной инструмент" width="600" height="350" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="thing_card_footer">
+              <div class="thing_card_meta">
+                <p class="thing_card_label">хранение на&nbsp;складе</p>
+                <span class="thing_card_arrow"><img src="assets/svg/icons/icon-arrow-right.svg" alt="" width="20" height="20"></span>
+              </div>
+              <p class="thing_card_text">В&nbsp;коробках с&nbsp;маркировкой</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="storage_things_bottom">
+        <div class="storage_things_actions">
+          <div class="info_card">
+            <img class="info_card_icon" src="assets/svg/icons/icon-info-circle-fill.svg" alt="" width="24" height="24">
+            <div class="info_card_body">
+              <p class="info_card_title">Как&nbsp;хранятся ваши вещи</p>
+              <p class="info_card_text">Мы&nbsp;упакуем, промаркируем и&nbsp;сфотографируем каждую вещь, выложим снимки в&nbsp;личный кабинет. Вы&nbsp;сами увидите, где&nbsp;и&nbsp;как&nbsp;хранится ваше имущество. Разместим даже крупногабаритные предметы интерьера</p>
+            </div>
+          </div>
+          <a class="btn" href="https://ambar-sklad.ru/uslugi/">Посмотреть все&nbsp;услуги</a>
+        </div>
+        <a class="ghost_link" href="#faq-forbidden" data-faq-open>
+          Что&nbsp;нельзя хранить на&nbsp;складе
+          <img src="assets/svg/icons/icon-arrow-down.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ СУЩЕСТВУЮЩИЙ: «Стоимость хранения» ============ -->
+  <section class="storage_cost">
+    <p class="proto_mark">Существующий блок</p>
+    <div class="container">
+      <h2>Стоимость хранения</h2>
+      <div class="storage_cost_slider_wrap">
+        <div class="swiper storage_cost_slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide storage_cost_slide">
+              <a href="https://ambar-sklad.ru/uslugi/hranenie-shin/">
+                <div class="storage_cost_img_wrap"><div class="storage_cost_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/hranenie_shin_thumb.svg?v=1782161134" alt="Хранение шин" /></div></div>
+                <div class="storage_cost_info"><h3>Хранение шин</h3><p class="price">1 156 ₽ / мес</p></div>
+              </a>
+            </div>
+            <div class="swiper-slide storage_cost_slide">
+              <a href="https://ambar-sklad.ru/uslugi/sezonnoe-hranenie/">
+                <div class="storage_cost_img_wrap"><div class="storage_cost_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/storage_cost_item_2-1.svg?v=1782161134" alt="Сезонное хранение вещей в Компании Амбар" /></div></div>
+                <div class="storage_cost_info"><h3>Освободить шкафы, балкон, кладовку</h3><p class="price">от 2 215 ₽ / мес</p></div>
+              </a>
+            </div>
+            <div class="swiper-slide storage_cost_slide">
+              <a href="https://ambar-sklad.ru/uslugi/hranenie-veshchej-na-vremya-remonta/">
+                <div class="storage_cost_img_wrap"><div class="storage_cost_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/storage_cost_item_3-1.svg?v=1782161134" alt="Хранение на время ремонта в Компании Амбар" /></div></div>
+                <div class="storage_cost_info"><h3>Хранение на время ремонта</h3><p class="price">от 6 313 ₽ / мес</p></div>
+              </a>
+            </div>
+            <div class="swiper-slide storage_cost_slide">
+              <a href="https://ambar-sklad.ru/uslugi/hranenie-pri-pereezde/">
+                <div class="storage_cost_img_wrap"><div class="storage_cost_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/storage_cost_item_4-1.svg?v=1782161134" alt="Хранение на время переезда в Компании Амбар" /></div></div>
+                <div class="storage_cost_info"><h3>Буферная зона для переезда</h3><p class="price">от 12 773 ₽ / мес</p></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://ambar-sklad.ru/prices/" class="btn">Посмотреть все тарифы</a>
+    </div>
+  </section>
+
+
+  <!-- ============ НОВЫЙ БЛОК 3: «Как рассчитать необходимый объём» ============ -->
+  <section class="storage_volume" id="volume">
+    <p class="proto_mark proto_mark--new">Новый блок 3</p>
+    <div class="container">
+      <h2>Как&nbsp;рассчитать необходимый объём</h2>
+
+      <!-- 3.1 Фото + схема короба -->
+      <div class="volume_intro">
+        <div class="volume_intro_photo">
+          <picture>
+            <source srcset="assets/images/volume-intro.webp" type="image/webp">
+            <img src="assets/images/volume-intro.jpg" alt="Набор вещей для хранения: коробки, кресло, столик, торшер и пылесос" width="1400" height="1050" loading="lazy" decoding="async">
+          </picture>
+        </div>
+
+        <div class="volume_box">
+          <figure class="volume_box_figure">
+            <svg class="volume_box_svg" viewBox="10 0 320 265" role="img" aria-label="Коробка Амбар: ширина 60 см, глубина 40 см, высота 40 см, объём 0,1 м³" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="volume-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 1 L9 5 L0 9 z" fill="#212A33"/>
+                </marker>
+              </defs>
+              <!-- грани короба -->
+              <polygon points="180,240 50,165 50,65 180,140" fill="#EBF5FC" stroke="#547D99" stroke-width="1.5" stroke-linejoin="round"/>
+              <polygon points="180,240 267,190 267,90 180,140" fill="#C0D9EB" stroke="#547D99" stroke-width="1.5" stroke-linejoin="round"/>
+              <polygon points="180,140 50,65 137,15 267,90" fill="#F7FBFC" stroke="#547D99" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- фирменный скотч -->
+              <!-- Полоса скотча: 2px на экране при любом масштабе схемы -->
+              <line x1="223.5" y1="115" x2="93.5" y2="40" stroke="#D92D2B" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <line x1="223.5" y1="115" x2="223.5" y2="215" stroke="#D92D2B" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <!-- выносные линии -->
+              <g stroke="#9AA0A6" stroke-width="1">
+                <line x1="180" y1="240" x2="160" y2="252"/>
+                <line x1="50" y1="165" x2="30" y2="177"/>
+                <line x1="180" y1="240" x2="200" y2="252"/>
+                <line x1="267" y1="190" x2="287" y2="202"/>
+                <line x1="267" y1="190" x2="291" y2="190"/>
+                <line x1="267" y1="90" x2="291" y2="90"/>
+              </g>
+              <!-- размерные стрелки -->
+              <g stroke="#212A33" stroke-width="1.3" marker-start="url(#volume-arrow)" marker-end="url(#volume-arrow)">
+                <line x1="163" y1="250" x2="33" y2="175"/>
+                <line x1="197" y1="250" x2="284" y2="200"/>
+                <line x1="285" y1="190" x2="285" y2="90"/>
+              </g>
+              <!-- подписи -->
+              <g font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#212A33" text-anchor="middle">
+                <text x="89" y="226" transform="rotate(30 89 226)">ширина 60&nbsp;см</text>
+                <text x="250" y="238" transform="rotate(-30 250 238)">глубина 40&nbsp;см</text>
+                <text x="303" y="140" transform="rotate(-90 303 140)">высота 40&nbsp;см</text>
+              </g>
+            </svg>
+            <figcaption class="volume_box_caption">
+              <p class="volume_box_name">Коробка Амбар 60&nbsp;×&nbsp;40&nbsp;×&nbsp;40&nbsp;см</p>
+              <p class="volume_box_total">≈&nbsp;0,1&nbsp;м³</p>
+              <p class="volume_box_formula">0,6&nbsp;×&nbsp;0,4&nbsp;×&nbsp;0,4&nbsp;м&nbsp;= 0,096&nbsp;м³</p>
+              <p class="volume_box_hint">10&nbsp;коробок ≈&nbsp;1&nbsp;м³</p>
+            </figcaption>
+          </figure>
+
+          <ol class="volume_steps">
+            <li>Измерьте вещи, которые планируете хранить, и&nbsp;сложите их&nbsp;объём</li>
+            <li>Наши специалисты помогут подобрать подходящий объём хранения</li>
+            <li><span>Для&nbsp;точного расчёта можно <a href="#callback-popup" data-fancybox data-type="inline">отправить список или&nbsp;фотографии вещей</a></span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 3.2 Калькулятор (список и шкала заполняются из js/new-blocks.js) -->
+      <div class="volume_calc" data-calc>
+        <h3 class="storage_volume_subtitle">Калькулятор объёма</h3>
+        <p class="storage_volume_lead">Отметьте вещи, которые планируете сдать,&nbsp;— посчитаем примерный объём и&nbsp;подскажем тариф</p>
+
+        <div class="volume_calc_layout">
+          <div class="calc_list">
+            <div class="calc_tabs" role="tablist" aria-label="Категории вещей" data-calc-tabs></div>
+            <div data-calc-panels></div>
+          </div>
+
+          <div class="calc_summary" id="calc-summary">
+            <div class="calc_summary_head" aria-live="polite">
+              <div class="calc_summary_volume">
+                <p class="calc_summary_label">Примерный объём</p>
+                <div class="calc_summary_row">
+                  <p class="calc_summary_total" data-calc-total>0,0&nbsp;м³</p>
+                  <p class="calc_summary_meta" data-calc-meta>Добавьте вещи из&nbsp;списка</p>
+                </div>
+              </div>
+              <p class="calc_summary_badge" data-calc-items hidden></p>
+            </div>
+
+            <div class="volume_scale" aria-hidden="true">
+              <p class="calc_summary_label">Шкала тарифов</p>
+              <div class="volume_scale_track"><div class="volume_scale_fill" data-calc-fill></div></div>
+              <ul class="volume_scale_ticks" data-calc-ticks></ul>
+            </div>
+
+            <div class="calc_tariff" aria-live="polite">
+              <p class="calc_summary_label">Подойдёт тариф</p>
+              <p class="calc_tariff_name" data-calc-tariff-name>Подберём, когда добавите вещи</p>
+              <p class="calc_tariff_price" data-calc-tariff-price hidden></p>
+            </div>
+
+            <div class="info_card info_card--full calc_info">
+              <img class="info_card_icon" src="assets/svg/icons/icon-info-circle-fill.svg" alt="" width="24" height="24">
+              <div class="info_card_body">
+                <p class="info_card_title">Расчёт примерный</p>
+                <p class="info_card_text">Точный объём и&nbsp;стоимость определим после приёмки на&nbsp;склад</p>
+              </div>
+            </div>
+
+            <div class="calc_actions">
+              <p class="calc_actions_text">Сомневаетесь? Пришлите список вещей, фото, консультант оценит объём и&nbsp;подберёт тариф</p>
+              <!-- Окно «Получить консультацию» сайта (#callback-popup), как у кнопки первого экрана; открывает Fancybox темы -->
+              <a href="#callback-popup" class="btn" data-fancybox data-type="inline">Получить консультацию</a>
+              <button type="button" class="calc_reset" data-calc-reset>Сбросить</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc_sticky" data-calc-sticky hidden>
+          <span>Итого: <strong data-calc-sticky-total>0,0&nbsp;м³</strong></span>
+          <a href="#calc-summary">К&nbsp;итогу</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ СУЩЕСТВУЮЩИЙ: «Почему выбирают «Амбар»» ============ -->
+  <section class="why_choose">
+    <p class="proto_mark">Существующий блок</p>
+    <div class="container">
+      <h2>Почему выбирают «Амбар»</h2>
+      <ul>
+        <li>
+          <div class="why_choose_item_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/safe_icon.svg?v=1782161134" alt="Иконка безопасности Компании Амбар" /></div>
+          <h3>Безопасность 24/7</h3>
+          <p>Складское помещение оборудовано надёжными системами пожаротушения и видеонаблюдения, круглосуточной охраной</p>
+        </li>
+        <li>
+          <div class="why_choose_item_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/why_choose_2.svg?v=1782161134" alt="Иконка чистоты в Компании Амбар" /></div>
+          <h3>Чистота и порядок</h3>
+          <p>Все вещи располагаем на стеллажах склада, где поддерживается оптимальные температура и влажность, отсутствуют вредители, пыль и плесень</p>
+        </li>
+        <li>
+          <div class="why_choose_item_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/why_choose_3.svg?v=1782161134" alt="Иконка прозрачности склада Компании Амбар" /></div>
+          <h3>Прозрачность</h3>
+          <p>Промаркируем, систематизируем ваши вещи и разместим их на стеллажах, используя профессиональное оборудование. Отправим фотоотчёт в ваш личный кабинет</p>
+        </li>
+        <li>
+          <div class="why_choose_item_img"><img src="https://ambar-sklad.ru/wp-content/uploads/2026/05/why_choose_4.svg?v=1782161134" alt="Иконка гибкости Компании Амбар" /></div>
+          <h3>Гибкость</h3>
+          <p>Увеличивайте или уменьшайте объём хранения онлайн в любой момент, доступ на территорию без выходных</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="proto_skip">Далее существующие секции без изменений: «Как сдать вещи», «Кому мы помогаем», «Для бизнеса», «Отзывы», «Личный кабинет»</div>
+  </section>
+
+
+  <!-- ============ СУЩЕСТВУЮЩИЙ: FAQ ============
+       ИЗМЕНЕНИЕ: вопросу «Что нельзя хранить» добавлен id="faq-forbidden" -->
+  <section id="faq" class="faq" itemscope itemtype="https://schema.org/FAQPage">
+    <p class="proto_mark">Существующий блок · добавлен якорь</p>
+    <div class="container">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq_items">
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Какие упаковочные материалы вы используете?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Для каждого предмета выбираем упаковку, которая ему подходит</p>
+                <ul>
+                  <li><p>Товары на поставку</p><p>Короба, воздушно-пузырьковая пленка, гофрокартон и др.</p></li>
+                  <li><p>Одежда и аксессуары</p><p>Пакеты из крафт-бумаги</p></li>
+                  <li><p>Мягкая и полированная мебель, бытовая и офисная техника</p><p>Пленки, специальные пакеты, картонные короба, гофрокартон</p></li>
+                </ul>
+                <div class="faq_item_content_bottom">
+                  <p>На дно коробок с хрупкими предметами укладываем пенопласт<br />Для лучшей сохранности имущества каждый короб оборачиваем скотчем<br />Все предметы, сданные на хранение, храним на специальных стеллажах</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" id="faq-forbidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Что нельзя хранить на вашем складе?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Мы создали идеальные условия на складе и принимаем почти все ваши вещи, кроме тех которые могут быть опасны или способны испортить имущество других клиентов</p>
+                <ul>
+                  <li><p>Опасные вещества</p><p>Легковоспламеняющиеся, токсичные, взрывчатые материалы, химические реагенты</p></li>
+                  <li><p>Ценности и деньги</p><p>Наличные деньги, ювелирные изделия, ценные бумаги, антиквариат</p></li>
+                  <li><p>Скоропортящиеся</p><p>Продукты питания, алкоголь</p></li>
+                  <li><p>Живые организмы</p><p>Животные, растения и цветы</p></li>
+                  <li><p>Негерметичные</p><p>Лакокрасочные материалы и жидкости в негерметичной таре</p></li>
+                  <li><p>Запрещенные</p><p>Оружие, боеприпасы, наркотические вещества</p></li>
+                  <li><p>Испорченные</p><p>Испорченные продукты, мусор, отходы</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Какой минимальный и максимальный срок хранения?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Предлагаем на выбор временное или длительное (долгосрочное) хранение на нашем складе</p>
+                <div class="faq_item_content_bottom"><p>Минимальный срок хранения — один месяц<br />Максимальный срок хранения — не ограничен</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Кто отвечает за сохранность во время хранения?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Ответственность за сохранность имущества, сданного на хранение на склад, несет компания Амбар</p>
+                <div class="faq_item_content_bottom"><p>С каждым клиентом заключаем договор — нам можно доверять!</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Как работает склад?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Склад работает в режиме 24/7</p>
+                <div class="faq_item_content_bottom"><p>Без перерыва и выходных</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Храните ли вы негабаритные вещи?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Да, мы храним вещи нестандартных габаритов, например, холодильник или диван</p>
+                <div class="faq_item_content_bottom"><p>Вес 1-го грузового места не более 100 кг<br />Поэтому мы не перевозим пианино и любой антиквариат</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Можно ли самостоятельно привезти вещи на склад?</h3>
+          <div class="faq_item_content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="faq_item_content_inner">
+              <div class="faq_item_content_top" itemprop="text">
+                <p class="first_p_faq">Да, вы можете приехать на наш склад, а мы примем вещи, упакуем и разместим их на складе</p>
+                <div class="faq_item_content_bottom"><p>Адрес склада: Москва, Троицк, ул. Промышленная 15<br />В этом случае вы не платите за доставку<br />Необходимо предварительно оформить заявку в <a href="https://newlk.ambar-sklad.ru/login">личном кабинете</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/prototype.js"></script>
+  <script src="js/new-blocks.js" defer></script>
+
+<!-- Только для превью: копия окна сайта #callback-popup, заявка не отправляется -->
+<div id="callback-popup" class="callback_popup modal">
+  <p class="callback_popup_title">Заказать звонок</p>
+  <p class="callback_popup_text">Оставьте номер&nbsp;— перезвоним в&nbsp;ближайшее время</p>
+  <div class="callback_popup_form leave_request_form">
+    <div class="wpcf7">
+      <form class="wpcf7-form" action="#" method="post" data-preview-form>
+        <div class="leave_request_form_item">
+          <span class="wpcf7-form-control-wrap"><input class="wpcf7-form-control wpcf7-tel wpcf7-text" type="tel" name="number_client" autocomplete="tel" placeholder="Ваш номер" required></span>
+        </div>
+        <div class="leave_request_form_item">
+          <span class="wpcf7-form-control-wrap"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="personal" value="1" checked><span class="wpcf7-list-item-label">Соглашаюсь с <a href="https://ambar-sklad.ru/soglasie-na-obrabotku-personalnyh-dannyh/" target="_blank" rel="noopener">обработкой своих персональных данных</a></span></label></span></span></span>
+          <span class="wpcf7-form-control-wrap"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="policy" value="1" checked><span class="wpcf7-list-item-label">Принимаю <a href="https://ambar-sklad.ru/politika-obrabotki-personalnyh-dannyh" target="_blank" rel="noopener">политику обработки персональных данных</a></span></label></span></span></span>
+        </div>
+        <div class="leave_request_form_item">
+          <input class="wpcf7-form-control wpcf7-submit btn" type="submit" value="Отправить заявку">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://ambar-sklad.ru/wp-content/themes/devseopro.com/assets/js/fancybox.js"></script>
+<script>
+  if (typeof Fancybox !== 'undefined') Fancybox.bind('[data-fancybox]');
+  document.querySelectorAll('form[data-preview-form]').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (form.reportValidity()) form.querySelector('[type="submit"]').value = 'Демо-версия: заявка не отправляется';
+    });
+  });
+</script>
+
+<!-- Только для превью: возврат к списку страниц -->
+<a href="../index.html" style="position:fixed;top:12px;right:12px;z-index:10000;padding:8px 14px;border-radius:8px;background:#212A33;color:#fff;font:600 14px/20px Manrope,system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.18)">← Все страницы</a>
+</body>
+</html>
